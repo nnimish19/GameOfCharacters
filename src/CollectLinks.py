@@ -69,14 +69,14 @@ class LinkParser(HTMLParser):
         else:
             return "",[]
 
-# And finally here is our spider. It takes in an URL, a word to find,
+# And finally here is our spider. It takes in an URL,
 # and the number of pages to search through before giving up
-def spider(url, word, maxPages):  
+def spider(url, maxPages):  
     pagesToVisit = [url]
     pagesToStore = [url]
     pagesVisited = {}
     numberVisited = 0
-    f = open('/home/abhinav/Eclipse/WebCrawler/DataLinks.txt', 'a')
+    f = open('../Data/DataLinks.txt', 'a')
     f.write("\n"+"\n")
     # The main loop. Create a LinkParser and get all the links on the page.
     # Also search the page for the word or string
