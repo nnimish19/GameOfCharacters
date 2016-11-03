@@ -61,8 +61,7 @@ def fetchInfoFromURL(url):
         # objs = filter(None, [PyQuery(e).text() for e in all_objs if e!=' ' and e!=''])        #need to use PyQuery(e) again because all_objs can contain a lxml object: <Element br at 0x1015f0518>
 
         objs = [PyQuery(t).text() for e in all_objs if e!=' ' and e!='' for t in PyQuery(e).contents() if t!=' ' and t!='']
-        objs = filter(None,objs)
-        objs = [e for e in objs if e not in no_use_words]
+        objs = [e for e in objs if e not in ['"',',','']]       # objs = filter(None,objs)
 
         # if pred == "children": print objs, "\n\n"
         for j in range(len(objs)-1,0,-1):
@@ -84,8 +83,8 @@ def fetchInfoFromURL(url):
         for e in objs:
             list = extractTags(removeTags(e))
             for val in list:
-                if pred in link_predicates: list_of_val.append(val.strip().lower().replace(" ", "_"))
-                else:   list_of_val.append(val.strip())
+                val = val.strip().lower().replace(" ", "_") if pred in link_predicates else val.strip()
+                list_of_val.append(val)
         objs = filter(None,list_of_val)
 
         graph[sub][pred] = objs
@@ -112,11 +111,13 @@ def main():
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------
 main()
-print describe('arya_stark')
+print describe('Arya Stark')
 print describe('Eddard Stark')
-print relation_bw('arya_stark', 'myrcella_baratheon')
-print relation_bw('arya_stark', 'lyanna_Stark')
-print relation_bw('tommen_baratheon', 'lyanna_Stark')
-print relation_of('arya_stark', 'father')
-print death('Joffrey_Baratheon')
+print describe('Cersei Lannister')
+print relation_bw('Arya Stark', 'Myrcella Baratheon')
+print relation_bw('Arya Stark', 'Lyanna Stark')
+print relation_bw('Tommen Baratheon', 'Lyanna Stark')
+print relation_of('Arya Stark', 'father')
+print relation_of('Cersei Lannister', 'children')
+print death('Joffrey Baratheon')
 print death('Eddard Stark')
