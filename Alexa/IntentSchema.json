@@ -1,0 +1,52 @@
+{
+	  "intents": [
+        {
+          "intent": "WhoIsX",
+          "slots": [
+            {
+              "name": "Character",
+              "type": "LIST_OF_CHARACTERS"
+            }
+          ]
+        },
+        
+        {
+          "intent": "RelationOfXandY",
+          "slots": [
+            {
+              "name": "CharacterX",
+              "type": "LIST_OF_CHARACTERS"
+            },
+            {
+              "name": "CharacterY",
+              "type": "LIST_OF_CHARACTERS"
+            }
+          ]
+        },
+
+	    {
+	      "intent": "DontKnowIntent"
+	    },
+	    {
+	      "intent": "AMAZON.StartOverIntent"
+	    },
+	    {
+	      "intent": "AMAZON.RepeatIntent"
+	    },
+	    {
+	      "intent": "AMAZON.HelpIntent"
+	    },
+	    {
+	      "intent": "AMAZON.YesIntent"
+	    },
+	    {
+	      "intent": "AMAZON.NoIntent"
+	    },
+	    {
+	      "intent": "AMAZON.StopIntent"
+	    },
+	    {
+	      "intent": "AMAZON.CancelIntent"
+	    }
+	  ]
+	}

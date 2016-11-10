@@ -1,0 +1,13 @@
+WhoIsX who is {Character}
+
+WhoIsX {Character} is who
+
+WhoIsX Do you know {Character}
+
+WhoIsX Can you tell who is {Character}
+
+RelationOfXandY What is the relation between {CharacterX} and {CharacterY}
+
+RelationOfXandY What is the relation of {CharacterX} and {CharacterY}
+
+RelationOfXandY How is {CharacterX} related to {CharacterY}
