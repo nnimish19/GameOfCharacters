@@ -23,6 +23,41 @@ Entity = {}
 #Used to store all the characters/places
 EntityList = []
 
+def correction(word): 
+    "Most probable spelling correction for word."
+    #return max(candidates(word), key=P)
+    candidate = list(candidates(word))
+    #print(candidate)
+    if len(candidate) == 0:
+        return ""
+    else:
+        #print("Corrected word "+candidate[0])
+        return candidate[0]
+
+def candidates(word): 
+    "Generate possible spelling corrections for word."
+    return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
+
+def known(words): 
+    "The subset of `words` that appear in the dictionary of WORDS."
+    return set(w for w in words if w in EntityList)
+
+def edits1(word):
+    "All edits that are one edit away from `word`."
+    letters    = 'abcdefghijklmnopqrstuvwxyz'
+    splits     = [(word[:i], word[i:])    for i in range(len(word) + 1)]
+    deletes    = [L + R[1:]               for L, R in splits if R]
+    transposes = [L + R[1] + R[0] + R[2:] for L, R in splits if len(R)>1]
+    replaces   = [L + c + R[1:]           for L, R in splits if R for c in letters]
+    inserts    = [L + c + R               for L, R in splits for c in letters]
+    return set(deletes + transposes + replaces + inserts)
+
+def edits2(word): 
+    "All edits that are two edits away from `word`."
+    return (e2 for e1 in edits1(word) for e2 in edits1(e1))
+
+
+
 # Add node to relationship graph
 def AddNewEntity(entity):
     if entity in EntityList:
@@ -189,11 +224,13 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
     
     entityOne = OrigEntityOne.lower()
     entityTwo = OrigEntityTwo.lower()
+    if entityOne not in EntityList:
+        entityOne = correction(entityOne)
+        if entityOne == "":
+            return (OrigEntityOne + "is not present in Database\n")
     if queryType == '0':
         splitter=re.compile(' ') 
         firstName = splitter.split(OrigEntityOne)[0]
-        if entityOne not in Entity:
-            return (OrigEntityOne + " is not present in Database\n")
         res=OrigEntityOne
         if "also known as" in Entity[entityOne]:
             res = res + " also known as "+Entity[entityOne]["also known as"][0]+","
@@ -212,12 +249,15 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
             res = res +". "+ firstName +" owe's allegiance to "+filterEntity(Entity[entityOne]["allegiance"][0])
         return res
     elif queryType == "1":
-        if entityOne not in Entity:
-            return (OrigEntityOne + " is not present in Database\n")
-        elif entityTwo not in Entity:
-            return (OrigEntityTwo + " is not present in Database\n")
+        if entityTwo not in Entity:
+            entityTwo = correction(entityTwo)
+            if entityTwo == "":
+                return (OrigEntityTwo + "is not present in Database.")
+        res = bfs(entityOne, entityTwo)
+        if res == "":
+            return (OrigEntityTwo + " and " +OrigEntityTwo+ "are related.")
         else:
-            return (bfs(entityOne, entityTwo))
+            return res
     elif queryType == "2":
         if entityOne not in Entity:
             return (OrigEntityOne + " is not present in Database\n")
