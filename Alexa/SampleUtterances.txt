@@ -1,4 +1,4 @@
-WhoIsX who is {Character}
+WhoIsX Who is {Character}
 
 WhoIsX {Character} is who
 
@@ -11,3 +11,7 @@ RelationOfXandY What is the relation between {CharacterX} and {CharacterY}
 RelationOfXandY What is the relation of {CharacterX} and {CharacterY}
 
 RelationOfXandY How is {CharacterX} related to {CharacterY}
+
+RelationOfXandY How are {CharacterX} and {CharacterY} related
+
+CharactersRelative Who is the {Relation} of {Character} 
