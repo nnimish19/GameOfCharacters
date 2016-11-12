@@ -1,6 +1,13 @@
 LIST_OF_CHARACTERS
 
 arya stark
-ned stark
-john snow
+eddard stark
+jon snow
 robb stark
+tywin lannister
+
+LIST_OF_RELATIONS
+
+father
+mother
+spouse
