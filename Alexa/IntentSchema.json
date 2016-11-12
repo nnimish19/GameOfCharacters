@@ -23,24 +23,23 @@
             }
           ]
         },
-
-	    {
-	      "intent": "DontKnowIntent"
-	    },
-	    {
-	      "intent": "AMAZON.StartOverIntent"
-	    },
-	    {
-	      "intent": "AMAZON.RepeatIntent"
-	    },
+		
+		{
+          "intent": "CharactersRelative",
+          "slots": [
+            {
+              "name": "Character",
+              "type": "LIST_OF_CHARACTERS"
+            },
+            {
+              "name": "Relation",
+              "type": "LIST_OF_RELATIONS"
+            }
+          ]
+        },
+		
 	    {
 	      "intent": "AMAZON.HelpIntent"
-	    },
-	    {
-	      "intent": "AMAZON.YesIntent"
-	    },
-	    {
-	      "intent": "AMAZON.NoIntent"
 	    },
 	    {
 	      "intent": "AMAZON.StopIntent"
