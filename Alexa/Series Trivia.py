@@ -158,6 +158,51 @@ def checkAdoptedChild(child, parent):
                 if parent in w.lower() and "adopt" not in w.lower() and "legal" not in w.lower():
                     return False
     return True
+    
+
+def ShortenRelation(level, relation,inLaw):
+    if len(relation) < 3:
+        return ""
+    firstPerson=relation[0]
+    secondPerson=relation[len(relation)-1]
+    if len(relation) == 3:
+        return secondPerson+" is "+relation[1]+" of "+firstPerson
+    tmpPrefix=""
+    tmpSuffix=""
+    if level < 0:
+        firstPerson=relation[len(relation)-1]
+        secondPerson=relation[0]
+        level = level*-1
+    if level == 0:
+        if ("father" in relation[1] or "mother" in relation[1]) and len(relation) == 5:
+            tmpPrefix = "sibling"
+        elif len(inLaw) > 0 and ("father" in relation[3] or "mother" in relation[3]) and len(relation) == 7:
+            tmpPrefix = "sibling"+inLaw
+        else:
+            tmpPrefix = "cousin"+inLaw
+    elif level == 1:
+        if len(inLaw) > 0 and len(relation) == 5:
+            tmpPrefix = "parent"+inLaw
+        else:
+            tmpSuffix = "'s parent"
+            if ("father" in relation[1] or "mother" in relation[1]) and len(relation) == 7:
+                tmpPrefix = "sibling "
+            elif len(inLaw) > 0 and ("father" in relation[3] or "mother" in relation[3]) and len(relation) == 9:
+                tmpPrefix = "sibling "
+                if secondPerson in relation[0]:
+                    tmpPrefix = tmpPrefix + inLaw
+                else:
+                    tmpSuffix = tmpSuffix + inLaw
+            else:
+                tmpPrefix = "cousin "
+            
+    else:
+        while level > 2:
+            tmpPrefix = tmpPrefix +"great "
+            level = level -1
+        tmpPrefix = tmpPrefix +"grandparent "+inLaw
+    return secondPerson+" is "+tmpPrefix+" of "+firstPerson+tmpSuffix
+
 
 def bfs(entityOne, entityTwo):
     visited = {}
@@ -170,9 +215,9 @@ def bfs(entityOne, entityTwo):
         if (cur == entityTwo):
             break
         for s in relationToVisit:
-            print(cur+" "+s)
+            #print(cur+" "+s)
             if s not in Entity[cur]:
-                print(s+" not in "+cur)
+                #print(s+" not in "+cur)
                 continue
             for nextNode in Entity[cur][s]:
                 if ("father" == s or "mother" == s) and ("adopt" in nextNode.lower() or "legal" in nextNode.lower()):
@@ -210,10 +255,31 @@ def bfs(entityOne, entityTwo):
             relation.append(prevNode[cur][0])
             cur = prevNode[cur][0]
         relation.reverse()
-    res=""
-    for w in relation:
-        res = res + " "+w
-    return res
+    return relation
+
+def SearchGraph(entityOne, entityTwo):
+    relation = bfs(entityOne, entityTwo)
+    if len(relation) > 0 and "spouse" not in relation[1]:
+        relation = bfs(entityOne, entityTwo)
+    inLaw = " "
+    level = 0
+    turn = 1
+    while turn < len(relation):
+        if turn == 1 and "spouse" in relation[turn] and len(relation) > 3:
+            inLaw = " in law "
+        if "father" in relation[turn] or "mother" in relation[turn]:
+            level = level +1
+        elif "child" in relation[turn]:
+            level = level -1
+        turn = turn +2
+    shortRel = ShortenRelation(level, relation,inLaw)
+    
+    longRel=""
+    turn = 0
+    while turn+2 < len(relation):
+        longRel = longRel + relation[turn+2]+" is "+relation[turn+1] +" of "+relation[turn]+". "
+        turn = turn + 2
+    return shortRel,longRel
     
 # prints relationship between two entities or prints a relative based on type of query.
 #example queries
@@ -226,8 +292,8 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
     entityTwo = OrigEntityTwo.lower()
     if entityOne not in EntityList:
         entityOne = correction(entityOne)
-        if entityOne == "":
-            return (OrigEntityOne + "is not present in Database\n")
+        if entityOne not in EntityList:
+            return (OrigEntityOne + " is not present in Database\n")
     if queryType == '0':
         splitter=re.compile(' ') 
         firstName = splitter.split(OrigEntityOne)[0]
@@ -249,20 +315,18 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
             res = res +". "+ firstName +" owe's allegiance to "+filterEntity(Entity[entityOne]["allegiance"][0])
         return res
     elif queryType == "1":
-        if entityTwo not in Entity:
+        if entityTwo not in EntityList:
             entityTwo = correction(entityTwo)
-            if entityTwo == "":
-                return (OrigEntityTwo + "is not present in Database.")
-        res = bfs(entityOne, entityTwo)
-        if res == "":
-            return (OrigEntityTwo + " and " +OrigEntityTwo+ "are related.")
+            if entityTwo not in EntityList:
+                return (OrigEntityTwo + " is not present in Database.")
+        shortRel,longRel = SearchGraph(entityOne, entityTwo)
+        if shortRel == "":
+            return (OrigEntityOne + " and " +OrigEntityTwo+ " are not related.")
         else:
-            return res
+            return shortRel+".\n"+longRel
     elif queryType == "2":
-        if entityOne not in Entity:
-            return (OrigEntityOne + " is not present in Database\n")
-        elif entityTwo not in Entity[entityOne]:
-            return (OrigEntityOne + " does not have " + OrigEntityTwo + "\n")
+        if entityTwo not in Entity[entityOne]:
+            return ("Information about "+entityTwo+" of "+OrigEntityOne + " is not present in database.")
         else:
             result = ""
             #result = OrigEntityOne +"'s" +OrigEntityTwo+ " is "+ filterEntity(Entity[entityOne][entityTwo][0])
