@@ -356,9 +356,12 @@ def handle_session_end_request():
     
 ''' Gets the name of the character from the user and provides the information to the user'''
 def get_who_is_x(intent, session):
-    card_title = intent['name']
+    if 'value' in intent['slots']['Character']:
+        card_title = intent['slots']['Character']['value']
+    else:
+        card_title = "Incorrect input."
     session_attributes = {}
-    should_end_session = False
+    should_end_session = True #Should be False if we want to continue dialog
     
     if 'Character' in intent['slots'] and 'value' in intent['slots']['Character']:
         character_name = intent['slots']['Character']['value']
@@ -376,9 +379,13 @@ def get_who_is_x(intent, session):
         card_title, speech_output, reprompt_text, should_end_session))
     
 def get_relation_of_x_and_y(intent, session):
-    card_title = intent['name']
+    if 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
+        card_title = intent['slots']['CharacterX']['value'] +" and " +intent['slots']['CharacterY']['value']
+    else:
+        card_title = "Incorrect input."
+    
     session_attributes = {}
-    should_end_session = False
+    should_end_session = True #Should be False if we want to continue dialog
     
     if 'CharacterX' in intent['slots'] and 'CharacterY' in intent['slots'] and 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
         character_name_x = intent['slots']['CharacterX']['value']
@@ -395,9 +402,13 @@ def get_relation_of_x_and_y(intent, session):
         card_title, speech_output, reprompt_text, should_end_session))   
     
 def get_character_relative(intent, session):
-    card_title = intent['name']
+    if 'value' in intent['slots']['Character'] and 'value' in intent['slots']['Relation']:
+        card_title = intent['slots']['Character']['value'] + "'s "+ intent['slots']['Relation']['value']
+    else:
+        card_title = "Incorrect input."
+                     
     session_attributes = {}
-    should_end_session = False
+    should_end_session = True #Should be False if we want to continue dialog
     
     if 'Character' in intent['slots'] and 'Relation' in intent['slots'] and 'value' in intent['slots']['Character'] and 'value' in intent['slots']['Relation']:
         character_name = intent['slots']['Character']['value']
