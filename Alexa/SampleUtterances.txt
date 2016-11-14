@@ -6,6 +6,12 @@ WhoIsX Do you know {Character}
 
 WhoIsX Can you tell who is {Character}
 
+WhoIsX Can you tell me who is {Character}
+
+WhoIsX Tell me who is {Character}
+
+WhoIsX Tell me about {Character}
+
 RelationOfXandY What is the relation between {CharacterX} and {CharacterY}
 
 RelationOfXandY What is the relation of {CharacterX} and {CharacterY}
