@@ -260,7 +260,7 @@ def bfs(entityOne, entityTwo):
 def SearchGraph(entityOne, entityTwo):
     relation = bfs(entityOne, entityTwo)
     if len(relation) > 0 and "spouse" not in relation[1]:
-        relation = bfs(entityOne, entityTwo)
+        relation = bfs(entityTwo, entityOne)
     inLaw = " "
     level = 0
     turn = 1
