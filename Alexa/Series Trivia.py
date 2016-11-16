@@ -23,7 +23,45 @@ Entity = {}
 #Used to store all the characters/places
 EntityList = []
 
-def correction(word): 
+
+def lcs(a, b):
+    lengths = [[0 for j in range(len(b)+1)] for i in range(len(a)+1)]
+    # row 0 and column 0 are initialized to 0 already
+    for i, x in enumerate(a):
+        for j, y in enumerate(b):
+            if x == y:
+                lengths[i+1][j+1] = lengths[i][j] + 1
+            else:
+                lengths[i+1][j+1] = max(lengths[i+1][j], lengths[i][j+1])
+    # read the substring out from the matrix
+    result = ""
+    x, y = len(a), len(b)
+    while x != 0 and y != 0:
+        if lengths[x][y] == lengths[x-1][y]:
+            x -= 1
+        elif lengths[x][y] == lengths[x][y-1]:
+            y -= 1
+        else:
+            assert a[x-1] == b[y-1]
+            result = a[x-1] + result
+            x -= 1
+            y -= 1
+    return result
+
+def correction(word):
+    "Most probable spelling correction for word."
+    #return max(candidates(word), key=P)
+    mx=5
+    w=word
+    for e in EntityList:
+        l= len(lcs(e,word))
+        if l>mx and float(l)/len(e) > 0.5:
+            w = e
+            mx=l
+    return w
+
+
+def correction0(word):
     "Most probable spelling correction for word."
     #return max(candidates(word), key=P)
     candidate = list(candidates(word))
@@ -34,11 +72,11 @@ def correction(word):
         #print("Corrected word "+candidate[0])
         return candidate[0]
 
-def candidates(word): 
+def candidates(word):
     "Generate possible spelling corrections for word."
     return (known([word]) or known(edits1(word)) or known(edits2(word)) or [word])
 
-def known(words): 
+def known(words):
     "The subset of `words` that appear in the dictionary of WORDS."
     return set(w for w in words if w in EntityList)
 
@@ -52,7 +90,7 @@ def edits1(word):
     inserts    = [L + c + R               for L, R in splits for c in letters]
     return set(deletes + transposes + replaces + inserts)
 
-def edits2(word): 
+def edits2(word):
     "All edits that are two edits away from `word`."
     return (e2 for e1 in edits1(word) for e2 in edits1(e1))
 
@@ -71,7 +109,7 @@ def AddNewEntity(entity):
 def AddValuesToEntity(entity, attributes):
     if entity not in Entity:
         return 1
-    
+
     Entity[entity][attributes[0].lower()]=[]
     for i in range(1,len(attributes)):
         Entity[entity][attributes[0].lower()].append(attributes[i][1:])
@@ -90,7 +128,7 @@ def removeTags(s):
         s=s[:ob]+s[cb+1:]
     return s
 
-# Removes content within brackets and extra spaces    
+# Removes content within brackets and extra spaces
 def filterEntity(entity):
     entity = entity.lower()
     entity = removeTags(entity)
@@ -100,7 +138,7 @@ def filterEntity(entity):
         entity = entity[1:]
     return entity
 
-# Prepare graph    
+# Prepare graph
 def PrepareGraph():
     #f = open('./CollectedData.txt', 'r')
     splitter=re.compile(LineEndSeq)
@@ -112,7 +150,7 @@ def PrepareGraph():
         if len(line) < 3:
             continue
         if EntityStartSeq in line:
-            
+
             entity = filterEntity(line[len(EntityStartSeq)+1:])
             if AddNewEntity(entity) == 1:
                 print("Entity already added"+line)
@@ -129,7 +167,7 @@ def PrepareGraph():
 #traverse the relation graph using only these edges
 relationToVisit = ["father", "mother", "spouse", "children"]
 
-# Removes content within brackets, remove flower brackets and extra spaces    
+# Removes content within brackets, remove flower brackets and extra spaces
 def filterChildNode(entity):
     entity = entity.lower()
     entity = removeTags(entity)
@@ -158,7 +196,7 @@ def checkAdoptedChild(child, parent):
                 if parent in w.lower() and "adopt" not in w.lower() and "legal" not in w.lower():
                     return False
     return True
-    
+
 
 def ShortenRelation(level, relation,inLaw):
     if len(relation) < 3:
@@ -195,7 +233,7 @@ def ShortenRelation(level, relation,inLaw):
                     tmpSuffix = tmpSuffix + inLaw
             else:
                 tmpPrefix = "cousin "
-            
+
     else:
         while level > 2:
             tmpPrefix = tmpPrefix +"great "
@@ -223,7 +261,7 @@ def bfs(entityOne, entityTwo):
                 if ("father" == s or "mother" == s) and ("adopt" in nextNode.lower() or "legal" in nextNode.lower()):
                     continue
                 nextNode = filterChildNode(nextNode)
-                
+
                 if nextNode not in EntityList:
                     for w in EntityList:
                         if w in nextNode:
@@ -273,31 +311,31 @@ def SearchGraph(entityOne, entityTwo):
             level = level -1
         turn = turn +2
     shortRel = ShortenRelation(level, relation,inLaw)
-    
+
     longRel=""
     turn = 0
     while turn+2 < len(relation):
         longRel = longRel + relation[turn+2]+" is "+relation[turn+1] +" of "+relation[turn]+". "
         turn = turn + 2
     return shortRel,longRel
-    
+
 # prints relationship between two entities or prints a relative based on type of query.
 #example queries
 # Query(2, arya stark, mother) // finds mother of arya stark
 # Query(1, arya stark, jon snow) // finds relationship between arya stark and jon snow
 
 def Query(queryType, OrigEntityOne, OrigEntityTwo):
-    
+
     entityOne = OrigEntityOne.lower()
     entityTwo = OrigEntityTwo.lower()
     if entityOne not in EntityList:
-        entityOne = correction(entityOne)
+        #entityOne = correction(entityOne)
         if entityOne not in EntityList:
-            return (OrigEntityOne + " is not present in Database\n")
+            return (entityOne + " is not present in Database\n")
     if queryType == '0':
-        splitter=re.compile(' ') 
-        firstName = splitter.split(OrigEntityOne)[0]
-        res=OrigEntityOne
+        splitter=re.compile(' ')
+        firstName = splitter.split(entityOne)[0]
+        res=entityOne
         if "also known as" in Entity[entityOne]:
             res = res + " also known as "+Entity[entityOne]["also known as"][0]+","
         elif "titles" in Entity[entityOne]:
@@ -316,21 +354,21 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
         return res
     elif queryType == "1":
         if entityTwo not in EntityList:
-            entityTwo = correction(entityTwo)
+            #entityTwo = correction(entityTwo)
             if entityTwo not in EntityList:
-                return (OrigEntityTwo + " is not present in Database.")
+                return (entityTwo + " is not present in Database.")
         shortRel,longRel = SearchGraph(entityOne, entityTwo)
         if shortRel == "":
-            return (OrigEntityOne + " and " +OrigEntityTwo+ " are not related.")
+            return (entityOne + " and " +entityTwo+ " are not related.")
         else:
-            return shortRel+".\n"+longRel
+            return shortRel#+". "+longRel
     elif queryType == "2":
         if entityTwo not in Entity[entityOne]:
-            return ("Information about "+entityTwo+" of "+OrigEntityOne + " is not present in database.")
+            return ("Information about "+entityTwo+" of "+entityOne + " is not present in database.")
         else:
             result = ""
             #result = OrigEntityOne +"'s" +OrigEntityTwo+ " is "+ filterEntity(Entity[entityOne][entityTwo][0])
-            result = filterEntity(Entity[entityOne][entityTwo][0]) + " is the " + OrigEntityTwo + " of " + OrigEntityOne  
+            result = filterEntity(Entity[entityOne][entityTwo][0]) + " is the " + OrigEntityTwo + " of " + OrigEntityOne
             return result
 
 
@@ -376,16 +414,14 @@ def get_welcome_response():
     card_title = "Welcome"
     speech_output = "Hello, Welcome to Series Trivia." \
                     " You can ask the following questions," \
-                    " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y? where X and Y both are different characters."\
-                    " 3. Who is the X of Y? where X is any relation and Y is any character."\
+                    " 1. Who is X?" \
+                    " 2. What is the relation between X and Y? "\
                     " If you need any help later just say help."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions," \
-                    " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y? where X and Y both are different characters."\
-                    " 3. Who is the X of Y? where X is any relation and Y is any character."\
+                    " 1. Who is X?" \
+                    " 2. What is the relation between X and Y?"\
                     " If you need any help later just say help."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
@@ -396,14 +432,14 @@ def get_help():
     card_title = "Help"
     speech_output = " You can ask the following questions," \
                     " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y? where X and Y both are different characters."\
-                    " 3. Who is the X of Y? where X is any relation and Y is any character."
+                    " 2. What is the relation of X and Y? "
+                   # " 3. Who is the X of Y? where X is any relation and Y is any character."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions," \
                     " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y? where X and Y both are different characters."\
-                    " 3. Who is the X of Y? where X is any relation and Y is any character."
+                    " 2. What is the relation of X and Y?"
+                    #" 3. Who is the X of Y? where X is any relation and Y is any character."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
@@ -413,83 +449,90 @@ def handle_session_end_request():
     speech_output = "Thank you for trying Series Trivia. " \
                     "Have a nice day! "
     # Setting this to true ends the session and exits the skill.
-    should_end_session = True
+    should_end_session = False
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
-  
-    
+
+
 ''' Gets the name of the character from the user and provides the information to the user'''
 def get_who_is_x(intent, session):
-    if 'value' in intent['slots']['Character']:
-        card_title = intent['slots']['Character']['value']
-    else:
-        card_title = "Incorrect input."
+
     session_attributes = {}
     should_end_session = False #Should be False if we want to continue dialog
-    
+
     if 'Character' in intent['slots'] and 'value' in intent['slots']['Character']:
         character_name = intent['slots']['Character']['value']
         #Did not write for session attributes
         #speech_output = "The character you want to know is " + character_name + " " + Entity[character_name.lower()]["father"][0]
+        character_name = correction(character_name.lower());
         speech_output = Query('0',character_name, "")
-        
+
         reprompt_text = "You can ask the same question for a different character or try a different question."
     else:
         speech_output = "I'm not sure which character are you talking about. " \
                         "Please try again."
         reprompt_text = "You can ask the question as, Who is X? where X is any character."
-        
+
+    if 'value' in intent['slots']['Character']:
+        card_title = character_name
+    else:
+        card_title = "Incorrect input."
+
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
-    
+
 def get_relation_of_x_and_y(intent, session):
     if 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
         card_title = intent['slots']['CharacterX']['value'] +" and " +intent['slots']['CharacterY']['value']
     else:
         card_title = "Incorrect input."
-    
+
     session_attributes = {}
     should_end_session = False #Should be False if we want to continue dialog
-    
+
     if 'CharacterX' in intent['slots'] and 'CharacterY' in intent['slots'] and 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
         character_name_x = intent['slots']['CharacterX']['value']
         character_name_y = intent['slots']['CharacterY']['value']
         #Did not write for session attributes
+
+        character_name_x = correction(character_name_x.lower());
+        character_name_y = correction(character_name_y.lower());
         speech_output =  Query("1", character_name_x, character_name_y)
         reprompt_text = "You can ask the same question for a different characters or try a different question."
+        card_title = character_name_x + " and " + character_name_y
     else:
         speech_output = "I'm not sure which characters are you talking about. " \
                         "Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
-        
+
     return build_response({}, build_speechlet_response(
-        card_title, speech_output, reprompt_text, should_end_session))   
-    
+        card_title, speech_output, reprompt_text, should_end_session))
+
 def get_character_relative(intent, session):
     if 'value' in intent['slots']['Character'] and 'value' in intent['slots']['Relation']:
         card_title = intent['slots']['Character']['value'] + "'s "+ intent['slots']['Relation']['value']
     else:
         card_title = "Incorrect input."
-                     
+
     session_attributes = {}
     should_end_session = False #Should be False if we want to continue dialog
-    
+
     if 'Character' in intent['slots'] and 'Relation' in intent['slots'] and 'value' in intent['slots']['Character'] and 'value' in intent['slots']['Relation']:
         character_name = intent['slots']['Character']['value']
         relation_name = intent['slots']['Relation']['value']
         #Did not write for session attributes
         #speech_output = "You want to know the relation between "+ character_name +" and "+ relation_name
         speech_output = Query('2', character_name, relation_name)
-        
+
         reprompt_text = "You can ask the same question for a different characters or try a different question."
     else:
         speech_output = "I'm not sure what are you talking about. " \
                         "Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
-        
+
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
-        
+
 
 # --------------- Events ------------------
 
@@ -559,7 +602,7 @@ def lambda_handler(event, context):
     prevent someone else from configuring a skill that sends requests to this
     function.
     """
-    if (event['session']['application']['applicationId'] != "amzn1.ask.skill.4d2837de-c42c-49f7-a98d-689265fad6f0"):
+    if (event['session']['application']['applicationId'] != "amzn1.ask.skill.5ffe1659-a8f0-4a47-b7e6-177dc1ae82e2"):
          raise ValueError("Invalid Application ID")
 
      
