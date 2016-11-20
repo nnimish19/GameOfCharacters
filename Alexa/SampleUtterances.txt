@@ -12,6 +12,10 @@ WhoIsX Tell me who is {Character}
 
 WhoIsX Tell me about {Character}
 
+WhoIsX Tell me the background stories of {Character}
+
+WhoIsX Give me information about {Character}
+
 RelationOfXandY What is the relation between {CharacterX} and {CharacterY}
 
 RelationOfXandY What is the relation of {CharacterX} and {CharacterY}
@@ -20,4 +24,15 @@ RelationOfXandY How is {CharacterX} related to {CharacterY}
 
 RelationOfXandY How are {CharacterX} and {CharacterY} related
 
+RelationOfXandY How {CharacterX} and {CharacterY} related to each other
+
+RelationOfXandY What is {CharacterX} to {CharacterY} 
+
 CharactersRelative Who is the {Relation} of {Character} 
+
+CharactersRelative Who is {Character}'s {Relation}
+
+CharactersRelative Who is {Character}'s {Relation}'s {Relation}
+
+
+
