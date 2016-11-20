@@ -434,13 +434,13 @@ def get_help():
     card_title = "Help"
     speech_output = " You can ask the following questions if you are confused about the stories or relationships between characters" \
                     " By asking Who is X? You will know the background stories of that person" \
-                    " By asking What is the relationship between person X and Y? You give get the idea of how these two characters are related"
+                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related"
                    # " 3. Who is the X of Y? where X is any relation and Y is any character."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions if you are confused about the stories or relationships between characters" \
                     " By asking Who is X? You will know the background stories of that person" \
-                    " By asking What is the relationship between person X and Y? You give get the idea of how these two characters are related"
+                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related"
    
                     #" 3. Who is the X of Y? where X is any relation and Y is any character."
     should_end_session = False
