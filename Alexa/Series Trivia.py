@@ -414,14 +414,16 @@ def get_welcome_response():
     card_title = "Welcome"
     speech_output = "Hello, Welcome to Series Trivia." \
                     " You can ask the following questions," \
-                    " 1. Who is X?" \
-                    " 2. What is the relation between X and Y? "\
+                    " Who is X?" \
+                    " Or What is the relationship between X and Y? "\
+                    " In here the X and Y can be any name of existing characters"\
                     " If you need any help later just say help."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions," \
-                    " 1. Who is X?" \
-                    " 2. What is the relation between X and Y?"\
+                    " Who is X?" \
+                    " Or What is the relationship between person X and Y?"\
+                    " In here the X and Y can be any name of existing characters"\
                     " If you need any help later just say help."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
@@ -430,15 +432,16 @@ def get_welcome_response():
 def get_help():
     session_attributes = {}
     card_title = "Help"
-    speech_output = " You can ask the following questions," \
-                    " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y? "
+    speech_output = " You can ask the following questions if you are confused about the stories or relationships between characters" \
+                    " By asking Who is X? You will know the background stories of that person" \
+                    " By asking What is the relationship between person X and Y? You give get the idea of how these two characters are related"
                    # " 3. Who is the X of Y? where X is any relation and Y is any character."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = " You can ask the following questions," \
-                    " 1. Who is X? where X is any character." \
-                    " 2. What is the relation of X and Y?"
+    reprompt_text = " You can ask the following questions if you are confused about the stories or relationships between characters" \
+                    " By asking Who is X? You will know the background stories of that person" \
+                    " By asking What is the relationship between person X and Y? You give get the idea of how these two characters are related"
+   
                     #" 3. Who is the X of Y? where X is any relation and Y is any character."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
