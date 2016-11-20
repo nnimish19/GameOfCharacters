@@ -14,7 +14,7 @@ WhoIsX Tell me about {Character}
 
 WhoIsX Tell me the background stories of {Character}
 
-WhoIsX Give me information about {Character}
+WhoIsX Give me some information about {Character}
 
 RelationOfXandY What is the relation between {CharacterX} and {CharacterY}
 
