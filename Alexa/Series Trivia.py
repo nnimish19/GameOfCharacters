@@ -476,7 +476,17 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
                 plural=" is the "
             #result = OrigEntityOne +"'s" +OrigEntityTwo+ " is "+ filterEntity(Entity[entityOne][entityTwo][0])
             return res + plural + OrigEntityTwo + " of " + OrigEntityOne+"."
-            
+    elif queryType == "3":
+        if "portrayed by" not in Entity[entityOne]:
+            return ("Information about actor who played "+OrigEntityOne+" is not present in database.")
+        else:
+            result = ""
+            for w in Entity[entityOne]["portrayed by"]:
+                if result != "":
+                    result = result + ", "
+                result = result + w
+            return (entityOne+" was portrayed by "+result+".")
+        
 
 # --------------- Helpers that build all of the responses ----------------------
 
