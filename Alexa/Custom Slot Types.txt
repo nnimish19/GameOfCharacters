@@ -8,6 +8,12 @@ tywin lannister
 
 LIST_OF_RELATIONS
 
-father
-mother
 spouse
+parents
+children
+grandparent
+cousins
+great grandparent
+great great grandparent
+great great great grandparent
+great great great great grandparent

@@ -346,7 +346,7 @@ def expandRelation(rel):
         res.append(1)
         res.append(-1)
         res.append(-1)
-    elif ("grandparents" in rel):
+    elif ("grandparent" in rel):
         splitter=re.compile(' ')
         tmpstr = splitter.split(rel)
         for w in tmpstr:
@@ -532,14 +532,16 @@ def get_welcome_response():
                     " You can ask the following questions," \
                     " Who is X?" \
                     " Or What is the relationship between X and Y? "\
-                    " In here the X and Y can be any name of existing characters"\
+                    " In here the X and Y can be any name of existing characters."\
+                    " Who is the X of Y? where X is any relation and Y is any character."\
                     " If you need any help later just say help."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions," \
                     " Who is X?" \
                     " Or What is the relationship between person X and Y?"\
-                    " In here the X and Y can be any name of existing characters"\
+                    " In here the X and Y can be any name of existing characters."\
+                    " Who is the X of Y? where X is any relation and Y is any character."\
                     " If you need any help later just say help."
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
@@ -549,13 +551,14 @@ def get_help():
     session_attributes = {}
     card_title = "Help"
     speech_output = " You can ask the following questions if you are confused about the stories or relationships between characters" \
-                    " By asking Who is X? You will know the background stories of that person" \
-                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related"
+                    " By asking Who is X? You will know the background stories of that person." \
+                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related." \
+                    " Who is the X of Y? where X is any relation and Y is any character."
                    # " 3. Who is the X of Y? where X is any relation and Y is any character."
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions if you are confused about the stories or relationships between characters" \
-                    " By asking Who is X? You will know the background stories of that person" \
+                    " By asking Who is X? You will know the background stories of that person." \
                     " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related"
    
                     #" 3. Who is the X of Y? where X is any relation and Y is any character."
