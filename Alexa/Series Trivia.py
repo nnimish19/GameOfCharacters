@@ -571,7 +571,7 @@ def handle_session_end_request():
     speech_output = "Thank you for trying Series Trivia. " \
                     "Have a nice day! "
     # Setting this to true ends the session and exits the skill.
-    should_end_session = False
+    should_end_session = True
     return build_response({}, build_speechlet_response(
         card_title, speech_output, None, should_end_session))
 
