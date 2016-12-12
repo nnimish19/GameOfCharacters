@@ -1,0 +1,39 @@
+What we might need for evaluation
+Using regression model learnt from the class
+
+·[Summative matrix/ parameters/ predictors: independent measure x]
+
+(1) * % of task succeeded
+Attribute-Value Matrix AVM
+Task success can be defined by match between AVM values at end of task with “true” values for AVM 
+attribute				value
+character1   
+character2
+relationship
+
+(2) *Concept accuracy: system’s ASR result of characters and relationships, compare the log with what user asked and what the system thinks they asked
+eg. character names, relationship
+
+(3)Elapse time of user ends and system begin(may be hard, or using timestamp of the log)
+
+(4)Turn correction ratio:  Number of user turns used solely to correct errors, divided by total number of turns, like the user repeats the question containing the name or relationship, or users’ negative response like “no/this is not what I said” 
+(5)number of times user had to barge-in, overlaps with (4)
+
+(6)number of times system said “sorry I didn’t understand that”, just according to the log
+
+·[Survey= dependent measure y (User satisfaction)]
+(1)Users’ perception of whether task was completed,in the end, the system may say “Please say good, bad or moderate of how the GoT system answered all of your questions in a satisfing manner”
+(2)”Rate from 1 to 5 of how easy the system is to understand. Where 1 is easy to understand, 5 is hard to understand”
+(3)”Please say ‘yes’ if you almost always know what to say next, ’no’ for not knowing what to say for the most of time”
+(4)”Is the system slow and sluggish in responding your questions? Please say yes or no.”
+(5) “Will you choose to reuse it in the future? Please give a range from 1 to 5, which 1 stands for yes definitely will, whereas 5 is no absolutely won’t.”
+
+·[What to calculate/ How to deal with x and y]
+Among all the predictor of user satisfaction listed above, there are 2 main preditors that are most significant:
+Task completion rate & Recognition accuracy
+We can calculate the  Coefficient of Determination  R^2, where in here http://www.biddle.com/documents/bcg_comp_chapter4.pdf
+we can find all the formula will be used to calculate it.
+(it includes mean and standard deviation of each parameter chosen, correlation between every 2 parameters like r(x1,x2), r(x2,x3) and r(x,y), then we’ll put into the r^2 formula, where R^2=1 means strong relation, =0 means weak relation between xs and y)
+(And the predicted user satisfaction Y’=a+b1X1 +b2X2 +… where coefficients b1,b2 has formulas to calculate them, and so does the intersection a)
+
+suggestions and modifications are most welcomed :)
