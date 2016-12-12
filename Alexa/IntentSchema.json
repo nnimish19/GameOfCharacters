@@ -44,8 +44,17 @@
 	    {
 	      "intent": "AMAZON.StopIntent"
 	    },
+        {
+	      "intent": "AMAZON.YesIntent"
+	    },
+        {
+	      "intent": "AMAZON.NoIntent"
+	    },
 	    {
 	      "intent": "AMAZON.CancelIntent"
-	    }
+	    },
+        {
+          "intent": "AMAZON.RepeatIntent"
+        }
 	  ]
 	}
