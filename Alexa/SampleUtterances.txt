@@ -34,5 +34,21 @@ CharactersRelative Who is {Character} s {Relation}
 
 CharactersRelative Who is {Character} s {Relation} s {Relation}
 
+CharactersRelative Who are the {Relation} of {Character} 
+
+CharactersRelative Who are the {Character} s {Relation}
+
+CharactersRelative Who are the {Character} s {Relation} s {Relation}
+
+OneCharacter {Character}
+
+TwoCharacters {CharacterX} {CharacterY}
+
+TwoCharacters {CharacterY} {CharacterX}
+
+TwoCharacters {CharacterX} and {CharacterY}
+
+TwoCharacters {CharacterY} and {CharacterX}
+
 
 

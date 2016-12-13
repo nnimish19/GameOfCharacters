@@ -24,6 +24,17 @@ FirstNames = {}
 #Used to store all the characters/places
 EntityList = []
 
+prob=float(1)
+
+class DialogueManager:
+    queryType="100"
+    entityOne="None"
+    entityTwo="None"
+    groudingCounter=0
+    previousUtterence="None"
+    
+
+dialogueManager = DialogueManager()
 
 def lcs(a, b):
     lengths = [[0 for j in range(len(b)+1)] for i in range(len(a)+1)]
@@ -50,19 +61,24 @@ def lcs(a, b):
     return result
 
 def correction(word):
-    "Most probable spelling correction for word."
+    #"Most probable spelling correction for word."
     #return max(candidates(word), key=P)
+    global prob
     if word in EntityList:
+        prob = 1.0
         return word
     if word in FirstNames:
+        prob = 1.0
         return FirstNames[word]
     mx=5
     w=word
+    prob = float(0)
     for e in EntityList:
         l= len(lcs(e,word))
         if l>mx and float(l)/len(e) > 0.5:
             w = e
             mx=l
+            prob=float(l)/len(e)
     return w
 
 
@@ -521,6 +537,7 @@ def build_response(session_attributes, speechlet_response):
 
 # --------------- Functions that control the skill's behavior ------------------
 
+
 def get_welcome_response():
     """ If we wanted to initialize the session to have some attributes we could
     add those here
@@ -528,13 +545,15 @@ def get_welcome_response():
 
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Hello, Welcome to Series Trivia." \
+    speech_output = "Hello"
+    '''
                     " You can ask the following questions," \
                     " Who is X?" \
                     " Or What is the relationship between X and Y? "\
                     " In here the X and Y can be any name of existing characters."\
                     " Who is the X of Y? where X is any relation and Y is any character."\
                     " If you need any help later just say help."
+    '''
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
     reprompt_text = " You can ask the following questions," \
@@ -579,45 +598,74 @@ def handle_session_end_request():
 ''' Gets the name of the character from the user and provides the information to the user'''
 def get_who_is_x(intent, session):
 
+    global dialogueManager
     session_attributes = {}
+    dialogueManager.queryType="100"
     should_end_session = False #Should be False if we want to continue dialog
-
+    card_title =""
     if 'Character' in intent['slots'] and 'value' in intent['slots']['Character']:
         character_name = intent['slots']['Character']['value']
         #Did not write for session attributes
         #speech_output = "The character you want to know is " + character_name + " " + Entity[character_name.lower()]["father"][0]
-
-        character_name = correction(character_name.lower());
-        card_title = character_name
-        speech_output = Query('0',character_name, "")
-        reprompt_text = "You can ask the same question for a different character or try a different question."
+        character_name = correction(character_name.lower())
+        if prob < 0.8:
+            speech_output = "Are you asking for information about "+character_name+". Please answer with yes or no."
+            dialogueManager.queryType="0"
+            dialogueManager.entityOne=character_name
+            dialogueManager.entityTwo=""
+            reprompt_text = "Please respond with yes or no."
+            card_title = "confirmation"
+            
+        else:
+            card_title = character_name
+            speech_output = Query('0',character_name, "")
+            reprompt_text = "You can ask the same question for a different character or try a different question."
     else:
         card_title = "Incorrect input."
         speech_output = "I'm not sure which character are you talking about. Please try again."
         reprompt_text = "You can ask the question as, Who is X? where X is any character."
 
+    if 'value' in intent['slots']['Character']:
+        card_title = card_title + character_name
+    else:
+        card_title = "Incorrect input."
+    #card_title = card_title+str(prob)
+    
+    dialogueManager.previousUtterence=speech_output        
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
 def get_relation_of_x_and_y(intent, session):
+
     session_attributes = {}
     should_end_session = False #Should be False if we want to continue dialog
-
+    dialogueManager.queryType="100"
+    global dialogueManager
     if 'CharacterX' in intent['slots'] and 'CharacterY' in intent['slots'] and 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
         character_name_x = intent['slots']['CharacterX']['value']
         character_name_y = intent['slots']['CharacterY']['value']
         #Did not write for session attributes
         character_name_x = correction(character_name_x.lower());
+        prob1 = prob
         character_name_y = correction(character_name_y.lower());
-
-        card_title = character_name_x + " and " + character_name_y
-        speech_output =  Query("1", character_name_x, character_name_y)
-        reprompt_text = "You can ask the same question for a different characters or try a different question."
+        prob2 = prob
+        if prob1 < 0.8 or prob2 < 0.8:
+            speech_output = "Are you asking for relation between "+character_name_x+" and "+character_name_y
+            dialogueManager.queryType="1"
+            dialogueManager.entityOne=character_name_x
+            dialogueManager.entityTwo=character_name_y
+            reprompt_text = "Please respond with yes or no."
+            card_title = "confirmation"
+        else: 
+            speech_output =  Query("1", character_name_x, character_name_y)
+            reprompt_text = "You can ask the same question for a different characters or try a different question."
+            card_title = character_name_x + " and " + character_name_y
     else:
         card_title = "Incorrect input."
         speech_output = "I'm not sure which characters are you talking about. Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
 
+    dialogueManager.previousUtterence=speech_output
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
@@ -625,20 +673,138 @@ def get_character_relative(intent, session):
 
     session_attributes = {}
     should_end_session = False #Should be False if we want to continue dialog
+    global dialogueManager
+    dialogueManager.queryType="100"
 
     if 'Character' in intent['slots'] and 'Relation' in intent['slots'] and 'value' in intent['slots']['Character'] and 'value' in intent['slots']['Relation']:
         character_name = intent['slots']['Character']['value']
         relation_name = intent['slots']['Relation']['value']
+        character_name = correction(character_name.lower());
+        if prob < 0.8:
+            dialogueManager.queryType="2"
+            dialogueManager.entityOne=character_name
+            dialogueManager.entityTwo=relation_name
+            speech_output = "Are you asking for information about "+character_name+". Please answer with yes or no."
+            reprompt_text = "Please respond with yes or no."
+            card_title = "confirmation"
+        else:
         #Did not write for session attributes
         #speech_output = "You want to know the relation between "+ character_name +" and "+ relation_name
-        card_title = character_name + "'s " + relation_name
-        speech_output = Query('2', character_name, relation_name)
+            card_title = character_name + "'s " + relation_name
+            speech_output = Query('2', character_name, relation_name)
+            reprompt_text = "You can ask the same question for a different characters or try a different question."
+    else:
+        card_title = "Incorrect input."
+        speech_output = "I'm not sure what are you talking about. " \
+                        "Please try again."
+        reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
+
+    
+    dialogueManager.previousUtterence = speech_output
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_NoIntent_response():
+    global dialogueManager
+    should_end_session = False
+    card_title = ""
+    if dialogueManager.queryType != "100":
+        if dialogueManager.queryType == "1":
+            speech_output = "Can you please repeat the names of the two characters."
+            reprompt_text = "Please repeat the names of the two characters."
+        else:
+            speech_output = "Can you please repeat the name of the character."
+            reprompt_text = "Please repeat the name of the character."        
+    else:
+        speech_output =  "Sorry I am unable to process your request. Please try again"
         reprompt_text = "You can ask the same question for a different characters or try a different question."
+    dialogueManager.previousUtterence=speech_output
+    return build_response({}, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_YesIntent_response():
+    global dialogueManager
+    should_end_session = False
+    if dialogueManager.queryType != "100":
+        speech_output = Query(dialogueManager.queryType, dialogueManager.entityOne, dialogueManager.entityTwo)
+        reprompt_text = "You can ask the same question for a different characters or try a different question."
+        card_title = "Response"
     else:
         card_title = "Incorrect input."
         speech_output = "I'm not sure what are you talking about. Please try again."
+        reprompt_text = "You can ask the same question for a different characters or try a different question."
+    dialogueManager.queryType="100"
+    dialogueManager.previousUtterence=speech_output
+    return build_response({}, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_RepeatResponse():
+    speech_output = dialogueManager.previousUtterence
+    reprompt_text = "You can ask the same question or try a different question"
+    should_end_session = False
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_ErrorResponse():
+    global dialogueManager
+    speech_output = "I'm not sure what are you talking about. Please try again."
+    reprompt_text = "You can ask the same question or try a different question"
+    should_end_session = False
+    dialogueManager.queryType = "100"
+    dialogueManager.previousUtterence=speech_output
+    card_title="Error"
+    return build_response({}, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_OneSlotCorrectedResponse(intent, session):
+    
+    should_end_session = False
+    global dialogueManager
+    if 'Character' in intent['slots'] and 'value' in intent['slots']['Character']:
+        character_name = intent['slots']['Character']['value']
+        character_name = correction(character_name.lower())
+        dialogueManager.entityOne = character_name
+        card_title = character_name
+        speech_output = Query(dialogueManager.queryType, dialogueManager.entityOne, dialogueManager.entityTwo)
+        reprompt_text = "You can ask the same question for a different character or try a different question."
+    else:
+        card_title = "Incorrect input."
+        speech_output = "I'm not sure which character are you talking about. " \
+                        "Please try again."
+        reprompt_text = "You can ask the question as, Who is X? where X is any character."
+
+        
+    #card_title = card_title+str(prob)
+    dialogueManager.queryType = "100"
+    dialogueManager.previousUtterence = speech_output
+    return build_response({}, build_speechlet_response(card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_TwoSlotCorrectedResponse(intent, session):
+    
+    global dialogueManager
+    should_end_session = False
+    if 'CharacterX' in intent['slots'] and 'CharacterY' in intent['slots'] and 'value' in intent['slots']['CharacterX'] and 'value' in intent['slots']['CharacterY']:
+        character_name_x = intent['slots']['CharacterX']['value']
+        character_name_y = intent['slots']['CharacterY']['value']
+        #Did not write for session attributes
+
+        character_name_x = correction(character_name_x.lower());
+        character_name_y = correction(character_name_y.lower());
+        speech_output =  Query("1", character_name_x, character_name_y)
+        reprompt_text = "You can ask the same question for a different characters or try a different question."
+        card_title = character_name_x + " and " + character_name_y
+    else:
+        card_title = "Incorrect input."
+        speech_output = "I'm not sure which characters are you talking about. " \
+                        "Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
 
+    
+    dialogueManager.queryType="100"
+    dialogueManager.previousUtterence=speech_output
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
@@ -673,15 +839,40 @@ def on_intent(intent_request, session):
     intent_name = intent_request['intent']['name']
 
     # Dispatch to your skill's intent handlers
-    if intent_name == "WhoIsX":
+    if intent_name == "AMAZON.RepeatIntent":
+        return get_RepeatResponse()
+    elif intent_name == "AMAZON.YesIntent":
+        return get_YesIntent_response()
+    elif intent_name == "AMAZON.NoIntent":
+        return get_NoIntent_response()
+    elif intent_name == "OneCharacter":
+        if dialogueManager.queryType == "100" or dialogueManager.queryType == "1":
+            return get_ErrorResponse()
+        else:
+            return get_OneSlotCorrectedResponse(intent, session)
+    elif intent_name == "TwoCharacters":
+        if dialogueManager.queryType == "100" or dialogueManager.queryType != "1":
+            return get_ErrorResponse()
+        else:
+            return get_TwoSlotCorrectedResponse(intent, session)
+    elif intent_name == "WhoIsX":
         print ('get_intent: WhoIsX')
-        return get_who_is_x(intent, session)
+        if dialogueManager.queryType != "100":
+            return get_ErrorResponse()
+        else:
+            return get_who_is_x(intent, session)
     elif intent_name == "RelationOfXandY":
         print('get_intent: RelationOfXandY')
-        return get_relation_of_x_and_y(intent, session)
+        if dialogueManager.queryType != "100":
+            return get_ErrorResponse()
+        else:
+            return get_relation_of_x_and_y(intent, session)
     elif intent_name == "CharactersRelative":
         print('get_intent: CharactersRelative')
-        return get_character_relative(intent, session)
+        if dialogueManager.queryType != "100":
+            return get_ErrorResponse()
+        else:
+            return get_character_relative(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         print('get_intent: AMAZON.HelpIntent')
         return get_help()
@@ -690,7 +881,8 @@ def on_intent(intent_request, session):
         return handle_session_end_request()
     else:
         print('Error: get_intent: Invalid intent')
-        raise ValueError("Invalid intent")
+        return get_ErrorResponse()
+
 
 
 def on_session_ended(session_ended_request, session):
@@ -717,8 +909,8 @@ def lambda_handler(event, context):
     prevent someone else from configuring a skill that sends requests to this
     function.
     """
-    if (event['session']['application']['applicationId'] != "amzn1.ask.skill.5ffe1659-a8f0-4a47-b7e6-177dc1ae82e2"):
-         raise ValueError("Invalid Application ID")         #amzn1.ask.skill.1fda864d-7ce9-448c-a235-fe5ba05a7b5e"):
+    if (event['session']['application']['applicationId'] != "amzn1.ask.skill.1fda864d-7ce9-448c-a235-fe5ba05a7b5e"):
+         raise ValueError("Invalid Application ID")
 
 
     if event['session']['new']:
