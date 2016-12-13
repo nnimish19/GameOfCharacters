@@ -1,6 +1,15 @@
 {
 	  "intents": [
         {
+          "intent": "OneCharacter",
+          "slots": [
+            {
+              "name": "Character",
+              "type": "LIST_OF_CHARACTERS"
+            }
+          ]
+        },
+        {
           "intent": "WhoIsX",
           "slots": [
             {
@@ -9,7 +18,19 @@
             }
           ]
         },
-        
+        {
+          "intent": "TwoCharacters",
+          "slots": [
+            {
+              "name": "CharacterX",
+              "type": "LIST_OF_CHARACTERS"
+            },
+            {
+              "name": "CharacterY",
+              "type": "LIST_OF_CHARACTERS"
+            }
+          ]
+        },
         {
           "intent": "RelationOfXandY",
           "slots": [
@@ -55,6 +76,22 @@
 	    },
         {
           "intent": "AMAZON.RepeatIntent"
+        },
+        {
+          "intent": "AMAZON.StartOverIntent"
+        },
+        {
+          "intent": "PortrayedBy",
+          "slots": [
+            {
+              "name": "Character",
+              "type": "LIST_OF_CHARACTERS"
+            },
+            {
+              "name": "PortrayWord",
+              "type": "LIST_OF_PORTRAYWORDS"
+            }
+          ]
         }
 	  ]
 	}

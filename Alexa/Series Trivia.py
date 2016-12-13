@@ -31,7 +31,7 @@ class DialogueManager:
     entityOne="None"
     entityTwo="None"
     groudingCounter=0
-    previousUtterence="None"
+    previousUtterence="Hello"
     
 
 dialogueManager = DialogueManager()
@@ -625,10 +625,6 @@ def get_who_is_x(intent, session):
         speech_output = "I'm not sure which character are you talking about. Please try again."
         reprompt_text = "You can ask the question as, Who is X? where X is any character."
 
-    if 'value' in intent['slots']['Character']:
-        card_title = card_title + character_name
-    else:
-        card_title = "Incorrect input."
     #card_title = card_title+str(prob)
     
     dialogueManager.previousUtterence=speech_output        
@@ -743,6 +739,7 @@ def get_RepeatResponse():
     speech_output = dialogueManager.previousUtterence
     reprompt_text = "You can ask the same question or try a different question"
     should_end_session = False
+    card_title = "Repeat"
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
@@ -773,7 +770,7 @@ def get_OneSlotCorrectedResponse(intent, session):
         card_title = "Incorrect input."
         speech_output = "I'm not sure which character are you talking about. " \
                         "Please try again."
-        reprompt_text = "You can ask the question as, Who is X? where X is any character."
+        reprompt_text = "You can a different like Who is X? where X is any character."
 
         
     #card_title = card_title+str(prob)
@@ -809,6 +806,51 @@ def get_TwoSlotCorrectedResponse(intent, session):
         card_title, speech_output, reprompt_text, should_end_session))
 
 
+def get_StartOver_response():
+    global dialogueManager
+    should_end_session = False
+    card_title = "Start Over"
+    dialogueManager.queryType="100"
+    dialogueManager.previousUtterence="Hello"
+    speech_output = "Okay your session has been reset."
+    reprompt_text = "You can ask the questions about Game of Thrones series."
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+
+def get_PortrayedBy(intent, session):
+    dialogueManager.queryType="100"
+    should_end_session = False #Should be False if we want to continue dialog
+    card_title =""
+    if 'Character' in intent['slots'] and 'value' in intent['slots']['Character']:
+        character_name = intent['slots']['Character']['value']
+        #Did not write for session attributes
+        #speech_output = "The character you want to know is " + character_name + " " + Entity[character_name.lower()]["father"][0]
+        character_name = correction(character_name.lower())
+        if prob < 0.8:
+            speech_output = "Are you asking for information about "+character_name+". Please answer with yes or no."
+            dialogueManager.queryType="3"
+            dialogueManager.entityOne=character_name
+            dialogueManager.entityTwo=""
+            reprompt_text = "Please respond with yes or no."
+            card_title = "confirmation"
+            
+        else:
+            card_title = character_name
+            speech_output = Query('3',character_name, "")
+            reprompt_text = "You can ask the same question for a different character or try a different question."
+    else:
+        card_title = "Incorrect input."
+        speech_output = "I'm not sure which character are you talking about. Please try again."
+        reprompt_text = "You can ask the question as, Who portrayed X? where X is any character."
+
+    #card_title = card_title+str(prob)
+    
+    dialogueManager.previousUtterence=speech_output        
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
+        
 # --------------- Events ------------------
 
 def on_session_started(session_started_request, session):
@@ -845,6 +887,8 @@ def on_intent(intent_request, session):
         return get_YesIntent_response()
     elif intent_name == "AMAZON.NoIntent":
         return get_NoIntent_response()
+    elif intent_name == "AMAZON.StartOverIntent":
+        return get_StartOver_response()
     elif intent_name == "OneCharacter":
         if dialogueManager.queryType == "100" or dialogueManager.queryType == "1":
             return get_ErrorResponse()
@@ -873,6 +917,12 @@ def on_intent(intent_request, session):
             return get_ErrorResponse()
         else:
             return get_character_relative(intent, session)
+    elif intent_name == "PortrayedBy":
+        print('get_intent: PortrayedBy')
+        if dialogueManager.queryType != "100":
+            return get_ErrorResponse()
+        else:
+            return get_PortrayedBy(intent, session)
     elif intent_name == "AMAZON.HelpIntent":
         print('get_intent: AMAZON.HelpIntent')
         return get_help()

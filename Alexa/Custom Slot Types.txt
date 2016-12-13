@@ -12,1104 +12,1601 @@ great great great great grandparent
 great great great great great grandparent
 great great great great great great grandparent
 
+LIST_OF_PORTRAYWORDS
+
+portrayed
+depicted
+played
+enacted
+portray
+depict
+play
+enact
+
 LIST_OF_CHARACTERS
-gregor clegane
-vanessa taylor
-crannogmen
-sally
-walk of punishment
-joyeuse erenford
-kill the boy
-stiv
-rhaena targaryen
-dim dalba
-lead dornish guard
-lhara
-neil marshall
-michele clapton
-janeya frey
-young bravo
-april ferry
-shaggydog
-blood of my blood
-cley cerwyn
-aegon iii targaryen
-portan
-doom of valyria
-balian
-waldron frey
-aelinor targaryen
-munkun
-ulf
-foreign merchant
-jaehaera targaryen
-peter dinklage
-andals
-osha
-boat commander
-aerys ii targaryen
-sarella sand
-viserys ii targaryen
-lannister bannerman 3
-stark guard
-gared
-sylvi
-daenerys targaryen
-marei
-rorge
-grenn
-bolton man 2
-fire and blood
-william simpson
-temmo
-jason mallister
-davos seaworth
-godwyn
-the shepherd
-kimberley pope
-dorna lannister
-brandon stark
-unsullied 1
-second son
-ghita
-cotter
-the house of black and white
-drogo
-sarra frey
-rylene florent
-waif
-maege mormont
-orphan kid 2
-mycah
-dwarf 3
-pentoshi servant
-aegon ii targaryen
-walter whent
-oathkeeper
-ser pounce
-genna
-baelish
-faith of the seven
-breaker of chains
-bianca
-asshai
-night%27s watch man
-aggar
-nymeria sand
-myk
-and now his watch is ended
-white walker
-loreza sand
-smiling knight
-tully
-tregar ormollen
-night%27s watch messenger
-lann
-lannister guardsman
-lorimer
-catelyn stark
-myranda
-mole%27s town madam
-lucerys velaryon
-talia forrester
-rogar bolton
-cheese
-orphan kid
-ternesio terys
-leaf
-stableboy
-master torturer
-oathbreaker
-dwarf 5
-gwendoline christie
-the pointy end
-jim stanes
-street tough 2
-craster%27s wife
-brant
-shae
-yunkai%27i slave 3
-willem wylde
-dyanna dayne
-lannister captain
-amarylis umber
-frey
-wildling girl
-mighdal
-winter is coming
-merry frey
-wendel manderly
-the winds of winter
-rickon stark
-aerion targaryen
-blood
-bryan cogman
-visenya targaryen
-war of conquest
-yunkai%27i slave 4
-horned lord
-kraznys mo nakloz
-tyene sand
-tristan mudd
-forzho
-imry florent
-farmer
-jon karstark
-armeca
-harys swyft
-brienne of tarth
-captain of the archers
-joby
-daario naharis
-domeric bolton
-rancer
-daeron ii targaryen
-loboda
-jaremy mallister
-tormund
-daena targaryen
-zanrush
-derwa frey
-red priestess
-three-eyed raven
-beric karstark
-josera snow
-eldrick sarsfield
-willem lannister
-alik sakharov
-cassana baratheon
-stonesnake
-shireen baratheon
-weasel
-thermund
-dark wings, dark words
-whore
-glenmore
-trystane martell
-northern lord
-high priest of r%27hllor
-akho
-derek
-balon greyjoy
-king%27s landing urchin
-othell yarwyck
-rhaego
-the beast
-andros
-the ice dragon
-styr
-deborah riley
-willa
-syrio forel
-r%27hllor
-mummer 2
-luther
-tansy
-great master 2
-the wolf and the lion
-mero
-ashford
-jack
-yara greyjoy
-copper king
-tobho mott
-mance rayder
-simon toyne
-vayon poole
-the long night
-walda frey
-pycelle
-craster%27s younger wife
-bloodsong
-robin arryn
-battle of the bastards
-qhono
-high sparrow
-pypar
-griffin king
-shiera seastar
-izembaro
-king%27s landing rioter 3
-the climb
-alex graves
-alan taylor
-morgan%27s friend
-gilly
-bowen
-edmure tully
-dwarf 2
-kayla
-lancel lannister
-kissed by fire
-walder frey%27s ninth%27s wife
-willem darry
-willis wode
-talla tarly
-michelle maclaren
-gwyn whitehill
-silk king
-season 6
-joanna lannister
+stark messenger
+haggo
 tanda stokeworth
-ebbert whitehill
-stannis baratheon
-olly
-tywin lannister
-fennesz
-valyrian freehold
-stokeworth
-florian
-unbowed, unbent, unbroken
-shagga
-hog farmer
-emmon cuy
-king%27s landing whore
-mace tyrell
-septon
-the dance of dragons
-night%27s watch man 2
-osmund kettleblack
-kegs
-the wars to come
-the north remembers
-white walkers
-ghiscari religion
-thirteen member
-tortured slave
-borba
-nikolaj coster-waldau
-the bear and the maiden fair
-the mountain and the viper
-aerys i targaryen
-jacks
-conflict beyond the wall
-simon fossoway
-rob
-melara hetherspoon
-innkeeper%27s daughter
-marya seaworth
-unidentified handmaiden
-maron martell
-borcas
-durran
-mycah umber
-mole%27s town whore
-dwarf 1
-margaery%27s handmaiden
-the broken man
-drummer
-cressen
-euron greyjoy
-gatins
-edric baratheon
-jeor mormont
-garden of bones
-oswell whent
-beric dayne
-borros baratheon
-ygritte
-deziel dalt
-free cities
-gunthor
-david petrarca
-jodan
-child of the forest 3
-dorea sand
-season 3
-janos slynt
-dongo
-first men
-steffon
-myrcella baratheon
-damon morrigen
-valyrian sword smith
-willem frey
-tommy
-jaehaerys targaryen
-errold holt
-frey guard
-bezzaq
-kit harington
-arthur dayne
-baratheon officer
-neyela frey
-dwarf hunter 1
-whitehill soldier 2
-the harpy
-rhaegal
-shella whent
-varys
-yi ti
-olyvar
-aemma arryn
-gladiator
-mychal baratheon
-drunk man
-malcolm
-lommy
-ludd whitehill
-irri
-sissy
-bear island maester
-calla
-sons of the harpy
-amaya
-old nan
-musician 2
-nelugo
-gordy
-fury gunnery officer
-high septon
-alton lannister
-cohollo
-the red woman
-tully bannerman
-penn
-violet
-vickon greyjoy
-asher forrester
-cooper
-rhaenys targaryen
-selwyn tarth
-bolton
-lena headey
-robin hill
-anara
-hot pie
-joffrey baratheon
-talisa stark
-ros
-rennick
-viserion
-wun weg wun dar wun
-great master 3
-frey soldier 1
-wyman manderly
-echiel
-baratheon soldier
-paxter redwyne
-child of the forest 2
-jonothor darry
-mord
-mern ix gardener
-moelle
-valar dohaeris
-aemon
-gryff whitehill
-yunkai%27i slave 1
-petyr karstark
-emilia clarke
-tyland lannister
-bryan
-axel baratheon
+stark officer 1
 rickard morgryn
-baelor
-liberation of slaver%27s bay
-missandei
-riddell
-alliser thorne
-endrew tarth
-tanselle
-vorkoy
-craster%27s wife 3
-little bird
-alannys greyjoy
-karstark lookout
-artys arryn
-karlon stark
-chella
-sophie turner
-ilyn payne
-vaull
-jeyne poole
-grey king
-lannister bannerman 2
-dwarf hunter 2
-jhaqo
-gareth umber
-son of the harpy
-brotherhood without banners
-wineseller
-podrick payne
-the gift
-aemond targaryen
-gorne
-the kingsroad
-faceless men
-northmen
-dying man
-bert
-stevron frey
-hodor
-willem
-olenna tyrell
-viserys targaryen
-rhaegar targaryen
-what is dead may never die
-ronnel arryn
-harren hoare
-sandor clegane
-benjen stark
-obara sand
-monica baratheon
-moro%27s bloodrider 1
-children of the forest
-jon lynderly
-gared tuttle
-gerhard forrester
-randyll tarly
-jon connington
-dontos hollard
-valyrian slave
-reginald lannister
-lem
-othor
-lyanna mormont
-daemon sand
-regan karstark
-d.b. weiss
-samwell tarly
-the watchers on the wall
-a nest of vipers
-jon umber
-gerold hightower
-king%27s landing rioter 2
-matthar
-danelle lothston
-olly%27s mother
-maelor targaryen
-duncan targaryen
-dwarf 4
-morgan
-the prince of winterfell
-lewyn martell
-hothor umber
-brothel guard
-the sword in the darkness
-boake
-nettles
-jojen reed
-aron santagar
-aegon targaryen
-child of the forest 4
-the night lands
-rodrik cassel
-matthos seaworth
-helaena targaryen
-stafford lannister
-garlan tyrell
-nissa nissa
-caleotte
-edgar yronwood
-little birds
-yunkai%27i whore
-dothraki widow 2
-thenn warg
-the tickler
-lyanna stark
-corlys wells
-mother%27s mercy
-jaime lannister
-david j. peterson
-ornela
-cheyk
-musician 3
-jaremy rykker
-the door
-duncan tuttle
-arthur
-biter
-clarenzo
-unidentified warlock
-mink
-musician 1
-duncan liddle
-no one
-cersei lannister
-lorren
-brothel child 1
-eyrie guard
-fighting pit announcer
-ray
-mhaegen
-maelys blackfyre
-daemon blackfyre
-marston waters
-night%27s watch officer 2
-malleon
-whitehill soldier 1
-mockingbird
-ch%27vyalthan
-yunkai%27i slave 5
-obella sand
-marlon
-vance corbray
-masha heddle
-wyllis bracken
-viola redwyne
-fegg
-great stallion
-spice king
-medger cerwyn
-ellaria sand
-corlys velaryon
-kullback
-roose bolton
-whitehill soldier 3
-rhaegel targaryen
-tom
-theon greyjoy
-vardis egen
-royal steward
-yoren
-donnel hill
-the old gods and the new
-wex
-preston greenfield
-wendel
-karl whitehill
-frances
+captain
+urzen
 lord snow
-luwin
-season 1
-drowned god
-berrican karstark
-king%27s landing rioter 1
-rodrik flint
-jack bulwer
-night%27s watch officer
-tourney herald
-the lost lords
-barra
-erena glover
-lyonel baratheon
-lannister soldier
-jorah mormont
-catspaw assassin
-aegon v targaryen
-hill tribes
-mordane
-otto hightower
-cregan stark
-daeron targaryen
-king%27s landing tailor
-guymon
-selyse baratheon
-baratheon
-dezhor zo raza
-farlen
-rose leslie
-cleon
-bethany redwyne
-yezzan zo qaggaz
-dorren stark
-mhysa
-royland degore
-bannen
-goatherd%27s son
-polliver
-areo hotah
-rat cook
-prendahl na ghezn
-the rains of castamere
-talia branfield
-norren
-rodrik stark
-samwell stone
-cotter pyke
-todder
-bobono
-maynard
-dom
-night king
-goatherd
-gerald
-melisandre
-hugh
-timett
-dornishmen
-the laws of gods and men
-tyrell bannerman
-lannister torturer
-azor ahai
-marillion
-elyo grivas
-desmond crakehall
+lewyn
+tregar
+lord
+regan
+king%27s landing baker
+harys
+tregar ormollen
+jack
+three-eyed raven
+hothor umber
+walda
+eustace
 hobb the hewer
-second sons
-meryn trant
-jacaerys velaryon
-aemon blackfyre
-home
-last dragon
-bolton general
-bran stark
-the ghost of harrenhal
-qhorin
-aegon blackfyre
-white rat
-caulfield
-stark soldier
-bessie
-the scourge
-quent
-brusco
-mandon moore
-night%27s watch archer
-axell florent
-talbot
-lomas longstrider
-bruni
-steffon baratheon
-robert baratheon
-yohn royce
-bolton soldier 1
-addam marbrand
-mark mylod
-rast
-willas tyrell
-adrack humble
-croft
-cedric forrester
-wallen
-erryk cargyll
-iggo
-maisie williams
-the north
-lucan
-ethan forrester
-allana tyrell
-thorren forrester
-gordo
-riverlands traveller
-beric dondarrion
-sybelle glover
-alys arryn
-kovarro
-elia sand
-citadel maester
-goldcloak 1
-pyat pree
-theon%27s master of hounds
-daemon targaryen
-qartheen woman
-old gods of the forest
-colen
-bethany bracken
-the lion and the rose
-clydas
-ironborn
-protestor
-damien
-robar royce
-david nutter
-the children
-david benioff
-niko
-god of death
-orson lannister
-walda bolton
-hizdahr zo loraq%27s manservant
-waldra frey
-grey worm
-goldcloak on the kingsroad
-iron from ice
-lothar frey
-dolf
-lucan umber
-halder
-yunkai%27i slave 6
-salladhor saan
-melessa tarly
-tommy dunne
-robb stark
-walder frey
-jane espenson
-maekar targaryen
-dareon
-marianne frey
-tyrell lady
-great master 1
-qarth
-goldcloak 2
-morag umber
-criston cole
-lordsport dockhand
-aegor rivers
-harkon umber
-wolkan
-jon arryn
-bald dragonstone servant
-belicho paenymion
-mully
-roslin tully
-karstark soldier 2
-miguel sapochnik
-joss
-varly
-jasper arryn
-sam
-small council
-jonquil
-jaqen h%27ghar
-brynden rivers
-argalia baratheon
-nymeria
-meera reed
-joe
-greizhen mo ullhor
-night%27s king
-iron bank of braavos
-edmyn tully
-lead kingsguard
-luthor tyrell
-allo
-robett glover
-duncan the tall
-kesh
-shirei frey
-rodrik greyjoy
-valar morghulis
-maegor iii targaryen
-karl tanner
-night%27s watch
-moro
-daeron i targaryen
-yunkai%27i slave 2
-daniel minahan
-king%27s landing boaster
-marq rankenfell
-viserys i targaryen
-arwaya frey
-mummer 3
-tommard baratheon
-elenei
-mikken
-joss stilwood
-marlin dormund
-arya stark
-kieran
-loyal night%27s watch man 1
-karstark soldier 1
-craster
-kurleket
-damon marbrand
-aegon i targaryen
-kaeth
-moro%27s wife 1
-brea
-mors martell
-theomar smallwood
-maegor targaryen
-daemon ii blackfyre
-moro%27s wife 2
-joffrey velaryon
-lyonel tyrell
-gyles rosby
-high priestess of the dosh khaleen
-mallister supporter
-amory lorch
-night%27s watch man 1
-ghost
-lyman lannister
-donnel waynwood
-harlen tyrell
-wildling female
-inn waitress
+eon hunter
+elissa
+willas
 nail
-cynda lannister
-qotho
-karsi
-baratheon general
-finn
-elder slave
-hardhome
-maron greyjoy
-street tough
+robett
+street
+denner
+meereenese homeless mother
+the beast
+ashford
+jonothor darry
+boros
+ramin
+osha
+great shepherd
+balian
+orphan kid
+luther
+gwayne corbray
+masha
+ramsay bolton
+adrack
+talia branfield
+argilac durrandon
+kieran
+marianne
 hallyne
-kingsguard
-orwyle
-arys oakheart
+ryon
+maisie
+aenys
+talisa stark
+mors martell
+morag
+riverlands traveller
+copper king
+baratheon general
+helaena
+daemon targaryen
+myranda
+riverlands
+fury gunnery officer
+dickon tarly
+merchant
+errold holt
+jaqen
+kit harington
+gordy
+dragons
+brothel child 1
+hallis
+white rat
+gordo
+valar
+mark mylod
+hog
+brothel child 2
+catspaw
+drummer
+and now his watch is ended
+mycah umber
+joyeuse erenford
+despondent
+thin man
+mhaegen
+dongo
+royland degore
+jojen reed
+barristan
+vance
+harkon
+small council
+amaya
+halder
+renly baratheon
+harlen
+yunkai%27i
+the wars to come
+viserys
+jaremy
+tully bannerman
+trystane
+battle of the bastards
+unsullied
+wun
 tommen%27s manservant
+viola redwyne
+deborah riley
+orson lannister
+bethany redwyne
+lyman lannister
+shae
+elaena
+vickon
+roose
+jonquil
+leo lefford
+last dragon
+thenn
+baratheon officer
+jaehaerys
+stygg
+kevan lannister
+jack bulwer
+king%27s landing whore
+hoster
+gatins
+thenn warg
+lucerys
+martyn lannister
+wyllis
+gareth umber
+jaime lannister
+stark officer 2
+ygritte
+karstark
+argalia
+maegor
+josera
+vardis egen
+daniel
+shella
+shiera seastar
+galbart glover
+podrick
+kayla
+frey
+obella sand
+aggar
+margaery%27s handmaiden
+tobho
+great stallion
+selwyn
+gregor clegane
+shagga
+artys arryn
+selyse
+mychal baratheon
+lordsport
+qartheen
+ironborn in skiff
+daena
+stokeworth
+elyo grivas
+jon karstark
+master
+robert%27s
+tom
+jory cassel
+old woman prisoner
+jacaerys
+mighdal
+tavern
+bethany
+viserys ii targaryen
+iron
+northern lord
+mink
+drennan
+roose bolton
+emmon cuy
+rat
+the north
+edmyn tully
+ray
+mandon moore
+northmen
+forzho
+karl tanner
+brandon
+derek
+braavosi madam
 rhalko
-moro%27s bloodrider 2
+janeya
+rickard
+lothar
+jojen
+dom
+selyse baratheon
+night%27s king
+oswell whent
 lysa arryn
+ortengryn
+harkon umber
+goatherd%27s son
+king%27s landing urchin
+walder frey%27s ninth%27s wife
+aenys targaryen
+unidentified handmaiden
+areo hotah
+axel baratheon
+monica
+garth
+craster%27s last son
+daemon ii blackfyre
+berrican
+lothor brune
+gareth
+neyela
+colen
+kingsguard
+cley
+willem lannister
+waldron
+asher forrester
+tortured
+fennesz
+gladiator
+night%27s watch man 2
+doran
+duff
+farlen
+wendel manderly
+pypar
+jhiqui
+rodrik cassel
+lannister torturer
+gwyn
+first king
+maekar targaryen
+edgar
+scolera
+bran
+cripples, bastards and broken things
+alton lannister
+melisandre
+olyvar frey
+garlan tyrell
+todder
+alerie
+bethany bracken
+erryk cargyll
+wyman
+preston
+war of conquest
+dareon
+gemma
+jeor
+the tickler
+beggar woman
+child
+cregan
+belicho
+grey king
+moro%27s
+shella whent
+gerhard
+royland
+cersei
+qartheen woman
+wyman manderly
+qyburn
+captain of the archers
+ilyn
+karsi
+rorge
+wendel
+niko
+desmond crakehall
+petyr baratheon
+michael slovis
+bearded
+cassana baratheon
+mallister
+portan
+rose leslie
+laurence karstark
+adrack humble
+marston waters
+warlocks
+whitehill soldier 3
+olenna
+lucan
+dorea sand
+illyrio mopatis
+rhaenyra
+aemma arryn
+goatherd%27s
+male prostitute
+royal
+yoren
+joss
+dave hill
+anya
+aegor rivers
+vanessa
+david benioff
+clea
+shadow
+daemon
+timett
+night
+axell
+benjen
+old
+loreza
+kimberley pope
+daisy
+doran martell
+karstark soldier 1
+karstark soldier 2
+elaena targaryen
+cooper
+night%27s queen
+erryk
+grenn
+matthar
+mully
+yara greyjoy
+nissa nissa
+tormund
+walda bolton
+breaker of chains
+jon connington
+emilia
+randyll tarly
+aegon ii targaryen
+boat commander
+joffrey velaryon
+loreza sand
+first of his name
+melara hetherspoon
+greyjoy
+bald dragonstone servant
+leaf
+jane
+dark wings, dark words
+thoros
+bert
+dyanna
+gryff whitehill
+shireen
+catelyn stark
+goatherd
+matthos
+yunkai%27i slave 3
+robar
+yunkai%27i slave 1
+yunkai%27i slave 6
+yunkai%27i slave 5
+valyrian slave
+commard karstark
+wildling girl
+fury
+marya
+tysha
+eddard stark
+erena glover
+pentoshi
+kullback
+meghan
+winterfell shepherd
+april ferry
+rylene florent
+loren
+barristan selmy
+pycelle
+varly
+yezzan zo qaggaz
+loyal
+elder slave
+bharbo
+amarylis
+old gods of the forest
+baratheon soldier
+the watchers on the wall
+dezhor zo raza
+rob
+lady crane
+lannister
+monica baratheon
+battle
+ros
+rancer
+meryn
+criston cole
+medger
+greizhen mo ullhor
+willis wode
+rossart
+donnel
+rhaenys
+aegon targaryen
+tyene sand
+minisa
+selwyn tarth
+catspaw assassin
+lollys
+dim
+drogon
+mummer 1
+hog farmer
+mummer 3
+brothel
+city watch
+theomar smallwood
+margaery%27s
+benjen stark
+tommard
+catelyn
+hill tribes
+edric baratheon
+tyene
+aelinor targaryen
+croft
+rogar bolton
+theon greyjoy
+axel
+dwarf
+wildling
+waif
+tyrell bannerman
+thirteen member
+joyeuse
+terrence
+unidentified
+domeric bolton
+night%27s watch archer
+donnel waynwood
+melessa
+greizhen
+jory
+braavosi captain
+sybelle glover
+yezzan
+high sparrow
+the ghost of harrenhal
+kesh
+talla tarly
+alik sakharov
+blackwater
+neil marshall
+gwendoline
+elaena glenmore
+rickon stark
+rickard karstark
+winterfell worker
+anara
+chella
+ternesio terys
+bolton man 2
+wallen
+robb
+alicent hightower
+night%27s watch man 1
+little birds
+ulf
+biter
+aegon iii targaryen
+locke
+palla
+bessie
+gwyn whitehill
+winter
+sarella
+theon%27s
+oznak
+duncan targaryen
+margaery tyrell
+winter is coming
+night%27s watch officer 2
+karlon
+mag
+the north remembers
+margaery
+brynden tully
+anya waynwood
+bryan cogman
+howland reed
+valar dohaeris
+ironborn 2
+night%27s watchman
+cotter
+drunk man
+tyrell
+thermund
+deziel dalt
+beric karstark
+morgan%27s
+gerold hightower
+jim
+iggo
+rhaena
+aerion
+farmer
+lyonel tyrell
+gwendoline christie
+jon arryn
+prendahl na ghezn
+irri
+first mate
+ilyn payne
+visenya targaryen
+singing lannister soldier
+freya
+tanda
+alan taylor
+maege mormont
+bowen marsh
+arryk
+elissa forrester
+laygood
+harker
+munkun
+olenna tyrell
+jim stanes
+qarth
+cressen
+arya stark
+king%27s landing tailor
+garibald
+ghita
+willem darry
+jon lynderly
+nikolaj coster-waldau
+ralf kenning
+jorah mormont
+daena targaryen
+cripples,
+tyland lannister
+artys
+kill the boy
+yunkai%27i whore
+addam
+first
+nymeria
+cheese
+walder rivers
+sansa
+thomas mccarthy
+goldcloak on the kingsroad
+karl whitehill
+george
+elia martell
+little
+ryon forrester
+balon greyjoy
+the night lands
+robert%27s rebellion
+desmond
+white
+season
+alan
+rhaenyra targaryen
+camello
+smiling knight
+namond
+lhara
+mira forrester
+sophie
+and
+maegor iii targaryen
+sam
+sons of winter
+foreign merchant
+alys arryn
+michele
+talia
+alannys greyjoy
+axell florent
+orwyle
+whitehill soldier 2
+whitehill soldier 1
+harald
+mazin
+lyonel baratheon
+lewyn martell
+meryn trant
+lordsport dockhand
+waymar royce
+michelle
+dothraki widow 3
+gyles
+ros%27s dissatisfied customer
+damon marbrand
+glenmore
+talbot
+robin arryn
+yunkai%27i slave 2
+meria
+inn
+jacaerys velaryon
+lyanna mormont
+aemond
+liberation
+ser pounce
+addam marbrand
+spice king
+mance rayder
+brienne
+andals
+erena
+petyr
+borros
+jonothor
+eddison
+borba
+tywin
+first men
+harren hoare
+sandor
+arwaya frey
+vance corbray
+stannis
+gared tuttle
+faith of the seven
 rodrik forrester
-unella
+lannister bannerman 1
+lannister bannerman 3
+lannister bannerman 2
+lannister soldier
+amory
+joby
+dim dalba
+izembaro
+cedric
+sylvi
+marlin dormund
+mummer
+kurleket
+alliser thorne
+moelle
+arthur dayne
+serena blackfyre
+drogo
+walder
+boat
+mara
+victarion
+clydas
+mark
+barra
+marq
+bloodsong
+valyrian freehold
+marya seaworth
+innkeeper
+royal steward
+reginald lannister
+naerys
+braavosi prostitute
+daemon sand
+gunthor
+walter whent
+tommen ii lannister
+aemma
 tycho nestoris
 captain%27s daughter
-mara karstark
-rickard karstark
-elaena targaryen
-johnna
-winterfell worker
-gemma jackson
-symon hollard
-despondent man
-bathhouse prostitute
-blackwater
-kinvara
-first mate
-ramin djawadi
-martyn lannister
-braavosi captain
-margaery tyrell
-clea
-rhaella targaryen
-aenys targaryen
-casper
-qyburn
-garth gardener
-unsullied
+otto
+damon
+cotter pyke
+robert baratheon
 hallis mollen
-arson iceaxe
-sharra arryn
-mazin
-two swords
-tortured prisoner
-quaithe
-humfrey beesbury
-petyr baratheon
-a golden crown
-mummer 1
-raymun redbeard
-first of his name
-wounded lannister
-malcolm branfield
-blackmont
-black goat of qohor
-mag mar tun doh weg
-meereenese homeless mother
-rhogar
-rossart
-mago
-anguy
-old man
-jeremy podeswa
-stark messenger
-garibald tarwick
-freya frey
-terrence toyne
-naerys targaryen
-mira forrester
-beggar woman
-ryon forrester
-harrion karstark
-wibberley
-brozho
-illyrio mopatis
-victarion greyjoy
-elissa forrester
-drennan
-torrhen karstark
-myriah martell
-jafer flowers
-bowen marsh
-gelmarr
-eglantine
-first king
-dothraki pit fighter
-laurence karstark
-malko
-jhiqui
-palla
-walder rivers
-mirelle
-lhazareen
-arryk cargyll
-eddard stark
-warlocks of qarth
-jory cassel
-elia martell
-season 4
-fruit vendor
-leo lefford
-lannister bannerman 1
-season 2
-ironborn 2
-stygg
-aggo
-pono
-craster%27s last son
-craster%27s wife 2
-mossador
-drowned priest
-gwayne corbray
-namond
-maesters
-jon snow
-howland reed
-natalie dormer
-therrond
-thoros
-bharbo
-elaena glenmore
-olyvar frey
-ryger rivers
-falyse stokeworth
-dragons
-aegon iv targaryen
-meghan
-tommen ii lannister
-bronn
-steve
-loyal night%27s watch man 2
-arthur glenmore
-merchant captain
-thomas mccarthy
-dothraki widow 3
-minisa tully
-dagmer
-duff
-tommen baratheon
-barristan selmy
-hizdahr zo loraq
-gawen glover
-boros blount
-oberyn martell
-commard karstark
-harker
-dickon tarly
-gregor forrester
-lothor brune
-robert%27s rebellion
-locke
-volarik
-petyr baelish
-alicent hightower
-drogon
-braavosi prostitute
-season 5
-gwayne gaunt
-stark officer 1
-erik
-old woman prisoner
-maggy
-bolton soldier
-camello
-kyra
-stark officer 2
-eon hunter
-meria martell
-oznak zo pahl
-scolera
-slave
-hoster tully
-male prostitute
-laygood
-doran martell
-sons of winter
-george r.r. martin
-xaro xhoan daxos
-ironborn in skiff
-book of the stranger
-escan
-eustace
-knight of house frey
-joramun
-jonos bracken
-brothel child 2
-baelor targaryen
-tavern girl
-lannister scout
-tyrell servant
-brynden tully
-lowell
-ros%27s dissatisfied customer
-waymar royce
-rakharo
-michael slovis
-razdal mo eraz
-sorcerer
-denys mallister
-wylla
-tytos lannister
-hobb
-orell
-cripples, bastards and broken things
-shadow
-you win or you die
-dave hill
-luke
-renly baratheon
-smitty
-aemon targaryen
-old woman
-free folk
-doreah
-loras tyrell
-war of the five kings
-orys i
-mirri maz duur
+fruit
+symon hollard
+polliver
+bezzaq
+harrion
+iron from ice
+luthor tyrell
+kill
+tommen%27s
+merry frey
 andal invasion
-gendel
-lollys stokeworth
-dothraki crone
-lyman beesbury
-bearded priests of norvos
-helliweg
-eddison tollett
-denner
-will
-night%27s queen
-rickard stark
-sansa stark
-harald karstark
-lord of bones
-rhaenyra targaryen
-singing lannister soldier
-branfield
+rose
+sharra arryn
+symon
+myrcella baratheon
+euron
+walk of punishment
+natalie dormer
+lomas longstrider
+vorkoy
+high priestess of the dosh khaleen
+dark
+domeric
+alex
+luthor
+jaremy rykker
+king%27s
+dying man
+r%27hllor
+gared
+dolf
+tommy dunne
+wibberley
+silk king
+gelmarr
+boros blount
+willis
+oathkeeper
+maesters
+daario naharis
+sarella sand
+aegon v targaryen
+goldcloak 1
+aelinor
+clarenzo
+freya frey
+minisa tully
+nissa
 serra frey
-balon swann
-lynesse hightower
-city watch
-haggo
-ortengryn
-thin man
-dothraki
-king%27s landing baker
-koner
-morag
+mossador
+bianca
+lyman
+gyles rosby
+echiel
+rickard stark
+willem wylde
+argalia baratheon
+bolton general
+jasper
+the shepherd
+season 4
+areo
+aerys i targaryen
+kissed by fire
+lollys stokeworth
+lhazareen
+sons of the harpy
+shirei
+orys i
+janos
+obella
+second sons
+brothel guard
+frey guard
+cedric forrester
+eldrick
+miguel
+gawen glover
+stark soldier
+fruit vendor
+maege
+allana tyrell
+night%27s watch officer
+children of the forest
+captain%27s
+sansa stark
+thorren
+lead dornish guard
+genna
+you
+hizdahr zo loraq
+neyela frey
+moro%27s bloodrider 1
+the ice dragon
+tyrell servant
+warlocks of qarth
+jasper arryn
+arryk cargyll
+arson iceaxe
+brotherhood
+the harpy
+ramsay
+natalie
+escan
+lysa
+lead kingsguard
+aegon blackfyre
+calla
+mummer 2
+bolton
+mallister supporter
+rhaegar
+rhaegal
+children
+street tough 2
+petyr karstark
+griffin
 brian kirk
-aya
-kevan lannister
-jaehaerys i targaryen
-joseth umber
-anya waynwood
-steelshanks
-alerie tyrell
-tysha
-braavosi madam
-aeron greyjoy
-lannister messenger
-heward
-whitehill lieutenant
-winterfell shepherd
-serena blackfyre
-innkeeper
-zalla
-tyrion lannister
-loren lannister
-argilac durrandon
-daisy
-galbart glover
-slaver%27s bay
-corin umber
-clegane
-orys baratheon
-a man without honor
-simpson
-urzen
-lobor
-ralf kenning
-great shepherd
-billy
-frey soldier 2
-night%27s watchman
-faith militant 1
-ramsay bolton
-greyjoy rebellion
+theomar
+razdal
+willem frey
+aerys
+loboda
 rhoynar
-lady crane
-brotherhood member
+eyrie
+sons
+lannister messenger
+anguy
+corlys velaryon
+faith militant 1
+small
+jaehaerys targaryen
+myrcella
+mole%27s town whore
+lothar frey
+rhogar
+rodrik stark
+what
+tommen baratheon
+vardis
+deborah
+shaggydog
+obara
+waymar
+daniel minahan
+simon toyne
+aegon iv targaryen
+dothraki pit fighter
+drowned god
+ryger rivers
+the kingsroad
+belicho paenymion
+jeor mormont
+maelys blackfyre
+rhaegel targaryen
+gwayne gaunt
+maron
+mors
+two
+moro
+lucan umber
+high septon
+mord
+dezhor
+ellaria
+vanessa taylor
+protestor
+mira
+doom
+oznak zo pahl
+craster
+damien
+william simpson
+emilia clarke
+morgan
+stafford lannister
+male
+ludd
+pono
+viserys targaryen
+the mountain and the viper
+smitty
+hugh
+heward
+norren
+stiv
+vayon poole
+zanrush
+blood
+pyat pree
+a
+daenerys targaryen
+marlon
+fire and blood
+master torturer
+daemon blackfyre
+dothraki widow 2
+mern ix gardener
+randyll
+eddard
+ornela
+smiling
+aemon
+slaver%27s bay
+lobor
+balon
+allo
+gerald
+duncan the tall
+koner
+boake
+penn
+jon snow
+lowell
+othor
+therrond
+lyanna
+bryan
+aemon blackfyre
+second son
+olly%27s
+asher
+stevron frey
+son of the harpy
+roslin tully
+neil
+stevron
+waldra frey
+jason mallister
+slave
+emmon
+dwarf hunter 1
+dwarf hunter 2
+aegor
+robert
+a nest of vipers
+edmure tully
+peter dinklage
+karstark lookout
+gerhard forrester
+pentoshi servant
+hill
+malcolm branfield
+aegon
+mance
+rat cook
+samwell
+brandon stark
+stonesnake
+merchant captain
+victarion greyjoy
+michelle maclaren
+lancel lannister
+imry
+duncan tuttle
+syrio
+malko
+sandor clegane
+copper
+viserion
+torrhen karstark
+elder
+the climb
+loyal night%27s watch man 1
+loyal night%27s watch man 2
+errold
+gawen
+zalla
+paxter redwyne
+bowen
+visenya
+denys mallister
+young bravo
+edmure
+podrick payne
+melessa tarly
+lothor
+grey
+jaehaerys i targaryen
+maekar
+nikolaj
+brienne of tarth
+tobho mott
+mara karstark
+tyrell lady
+the sword in the darkness
+dontos hollard
+cleon
+ghiscari
+rodrik greyjoy
+karl
+god of death
+florian
+maelys
+tortured slave
+mirelle
+serena
+joss stilwood
+harren
+mace
+bathhouse prostitute
 wyl
+arson
+garlan
+cynda
+craster%27s younger wife
+rakharo
+aemon targaryen
+thomas
+lorren
+robar royce
+viserys i targaryen
+finn
+jonos bracken
+what is dead may never die
+northern
+duncan
+gilly
+walda frey
+bannen
+luke
+tytos
+silk
+black goat of qohor
+arys
+dothraki
+helaena targaryen
+alliser
+arya
+tourney
+morag umber
+endrew tarth
+ser
+waldron frey
+marston
+salladhor
+tortured prisoner
+riddell
+jaehaera targaryen
+brotherhood without banners
+ludd whitehill
+unella
+myriah
+yi ti
+falyse
+commard
+two swords
+tristan
+blood of my blood
+derwa frey
+borros baratheon
+mycah
+hot pie
+durran
+knight of house frey
+osmund kettleblack
+salladhor saan
+lucerys velaryon
+last
+wolkan
+foreign
+steelshanks
+dontos
+thorren forrester
+drunk
+olly
+andal
+mother%27s mercy
+king%27s landing rioter 3
+king%27s landing rioter 2
+king%27s landing rioter 1
+valyrian sword smith
+oathbreaker
+the dance of dragons
+d.b.
+donnel hill
+ronnel arryn
+tyrion lannister
+walter
+fire
+craster%27s wife 2
+jonos
+loras tyrell
+daeron targaryen
+wex
+harlen tyrell
+mordane
+argilac
+lyonel
+conflict beyond the wall
+rogar
+goldcloak 2
+robin
+tanselle
+harys swyft
+styr
+volarik
+mandon
+lomas
+drowned priest
+azor ahai
+mother%27s
+bolton soldier 1
+david nutter
+horned lord
+viola
+daeron ii targaryen
+conflict
+orell
+king%27s landing boaster
+cohollo
+tyland
+reginald
+beric dayne
+dyanna dayne
+josera snow
+wounded lannister
+arys oakheart
+gregor forrester
+the lion and the rose
+andros
+mikken
+samwell tarly
+lady
+mace tyrell
+luwin
+griffin king
+sarra frey
+gwayne
+ros%27s
+tourney herald
+ryger
+aeron greyjoy
+marlin
+arthur
+steffon
+joramun
+wineseller
+dothraki crone
+dickon
+brynden rivers
+samwell stone
+renly
+amarylis umber
+tywin lannister
+armeca
+braavosi
+othell yarwyck
+shirei frey
+the pointy end
+blackmont
+war of the five kings
+street tough
+joffrey
+eglantine
+faith
+orphan kid 2
+helliweg
+duncan liddle
+davos seaworth
+wildling female
+lynesse
+aya
+cley cerwyn
+free cities
+dwarf 5
+dwarf 4
+dwarf 3
+dwarf 2
+dwarf 1
+the house of black and white
+preston greenfield
+iron bank of braavos
+kyra
+mirri maz duur
+brynden
+eldrick sarsfield
+septon
+jacks
+jorah
+alerie tyrell
+qotho
+talla
+azor
+rickon
+ghiscari religion
+rhaella targaryen
+syrio forel
+dorren stark
+tytos lannister
+tristan mudd
+horned
+robin hill
+willem
+fegg
+nelugo
+dorna lannister
+denys
+the laws of gods and men
+unidentified warlock
+shiera
+alex graves
+the gift
+aron santagar
+sorcerer
+lena
+brozho
+innkeeper%27s
+frances
+william
+kovarro
+season 6
+season 5
+deziel
+season 3
+season 2
+season 1
+red priestess
+lead
+naerys targaryen
+lann
+cersei lannister
+rhaegar targaryen
+the bear and the maiden fair
+jason
+melara
+steve
+petyr baelish
+whitehill lieutenant
+simon
+young
+three-eyed
+daario
+talia forrester
+dorna
+sharra
+a golden crown
+garden
+jafer
+falyse stokeworth
+rhaella
+the red woman
+knight
+michael
+varys
+corlys wells
+kit
+gendel
+jaehaera
+the door
+lena headey
+medger cerwyn
+othell
+hodor
+lyman beesbury
+cregan stark
+sophie turner
+bear island maester
+high priest of r%27hllor
+laurence
+ronnel
+baelor targaryen
+frey soldier 2
+frey soldier 1
+lem
+balon swann
+leo
+arthur glenmore
+janos slynt
+rylene
+great
+the prince of winterfell
+aggo
+gorne
+whitehill
+corin
+bran stark
+euron greyjoy
+marq rankenfell
+lorimer
+cassana
+clegane
+theon%27s master of hounds
+rhaegel
+harald karstark
+singing
+guymon
+gregor
+miguel sapochnik
+edgar yronwood
+orys
+a man without honor
+damon morrigen
+simon fossoway
+musician
+mirri
+borcas
+hizdahr zo loraq%27s manservant
+imry florent
+jafer flowers
+the scourge
+stafford
+alik
+marillion
+thin
+valyrian
+wun weg wun dar wun
+ebbert whitehill
+martyn
+high
+yohn royce
+xaro xhoan daxos
+orson
+eyrie guard
+ramin djawadi
+regan karstark
+brian
+aeron
+oberyn martell
+maisie williams
+david petrarca
+rhaenys targaryen
+white walkers
+kaeth
+crannogmen
+jeyne poole
+alicent
+walder frey
+janeya frey
+allana
+hizdahr
+elia
+cheyk
+joanna
+garth gardener
+goldcloak
+beric dondarrion
+serra
+oswell
+lord of bones
+corin umber
+criston
+meera
+billy
+brusco
+winterfell
+otto hightower
+alannys
+thirteen
+marianne frey
+matthos seaworth
+arwaya
+cynda lannister
+raymun
+fighting pit announcer
+red
+marei
+tully
+joanna lannister
+yara
+lancel
+david
+aerys ii targaryen
+unbowed, unbent, unbroken
+raymun redbeard
+kraznys mo nakloz
+hardhome
+lannister scout
+stark
+the old gods and the new
+gerold
+edmyn
+the lost lords
+derwa
+malleon
+meera reed
+ebbert
+great master 1
+caulfield
+great master 3
+great master 2
+karlon stark
+ironborn
+tommy
+humfrey beesbury
+maron greyjoy
+joffrey baratheon
+aemond targaryen
+galbart
+beggar
+tommen
+stannis baratheon
+willas tyrell
+the winds of winter
+robb stark
+caleotte
+gryff
+alton
+xaro
+edric
+sally
+white walker
+little bird
+brea
+olly%27s mother
+wounded
+maelor
+bobono
+osmund
+brant
+lannister guardsman
+roslin
+rast
+ethan
+daenerys
+spice
+bear
+temmo
+meereenese
+beric
+jaime
+bathhouse
+daeron i targaryen
+valar morghulis
+masha heddle
+trystane martell
+maelor targaryen
+eddison tollett
+grey worm
+orphan
+greyjoy rebellion
+despondent man
+meria martell
+violet
+d.b. weiss
+waldra
+maynard
+jhaqo
+vickon greyjoy
+bruni
+myriah martell
+aron
+faceless
+aerion targaryen
+inn waitress
+garden of bones
+hobb
+mago
+joe
+merry
+jon
+maegor targaryen
+kraznys
+asshai
+bronn
+april
+maggy
+mhysa
+vayon
+night king
+malcolm
+tyrion
+walk
+maron martell
+berrican karstark
+amory lorch
+lannister captain
+quent
+ternesio
+baratheon
+willa
+bearded priests of norvos
+garibald tarwick
+citadel
+vaull
+alys
+tycho
+innkeeper%27s daughter
+lynesse hightower
+dagmer
+will
+aegon i targaryen
+erik
+baelish
+tommard baratheon
+mockingbird
+craster%27s
+whore
+citadel maester
+obara sand
+mag mar tun doh weg
+hothor
+ellaria sand
+rodrik
+loren lannister
+johnna
+qhono
+illyrio
+old woman
+elenei
+old nan
+stableboy
+bald
+kimberley
+shireen baratheon
+fighting
+breaker
+old man
+tansy
+casper
+rhaena targaryen
+faceless men
+night%27s watch
+craster%27s wife
+craster%27s wife 3
+joseth
+elia sand
+jeremy podeswa
+george r.r. martin
+jaqen h%27ghar
+kevan
+danelle
+stark guard
+sissy
+book of the stranger
+pyat
+weasel
+nettles
+lommy
+godwyn
+david j. peterson
+home
+peter
+orys baratheon
+jeremy
+the broken man
+kinvara
+moro%27s bloodrider 2
+ralf
+akho
+prendahl
+jane espenson
+torrhen
+quaithe
+sarra
+ethan forrester
+rhaego
+qhorin
+loras
+baelor
+corlys
+mole%27s
+brotherhood member
+the long night
+olyvar
+razdal mo eraz
+doreah
+elyo
+missandei
+hoster tully
+rodrik flint
+jodan
+sybelle
+doom of valyria
+the rains of castamere
+mern
+mero
+dorea
+gemma jackson
+lyanna stark
+endrew
+terrence toyne
+howland
+dorren
+joseth umber
+kegs
+paxter
+michele clapton
+rennick
+davos
+danelle lothston
+steffon baratheon
+humfrey
+bolton soldier
+unsullied 1
+the children
+yohn
+dornishmen
+eon
+myk
+wyllis bracken
+jon umber
+kissed
+theon
+robett glover
+branfield
+book
+harrion karstark
+jaremy mallister
+jeyne
+tavern girl
+liberation of slaver%27s bay
+oberyn
+ghost
+wylla
+nymeria sand
+dave
+daeron
+mychal
+free folk
+talisa
+ch%27vyalthan
+simpson
