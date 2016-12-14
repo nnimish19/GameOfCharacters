@@ -26,6 +26,8 @@ EntityList = []
 
 prob=float(1)
 
+GenderNeutralRelations=["parent", "sibling", "spouse", "cousin", "grandparent"]
+
 class DialogueManager:
     queryType="100"
     entityOne="None"
@@ -67,9 +69,12 @@ def correction(word):
     if word in EntityList:
         prob = 1.0
         return word
+    if word in "john":
+        word = "jon"
     if word in FirstNames:
         prob = 1.0
         return FirstNames[word]
+    
     mx=5
     w=word
     prob = float(0)
@@ -484,10 +489,21 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
         else:
             res=""
             for w in result:
-                res=res+w+", "
-            plural=" are the "
+                if w == result[-1]:
+                    res = res+"  and "
+                elif res != "":
+                    res = res + ", "
+                res=res + w
+            
             if len(result) == 1:
                 plural=" is the "
+                if OrigEntityTwo[-1] == 's':
+                    OrigEntityTwo = OrigEntityTwo[0:-1]
+            else:
+                plural=" are the "
+                if OrigEntityOne[-1] != 's':
+                    OrigEntityTwo = OrigEntityTwo+"s"
+            
             #result = OrigEntityOne +"'s" +OrigEntityTwo+ " is "+ filterEntity(Entity[entityOne][entityTwo][0])
             return res + plural + OrigEntityTwo + " of " + OrigEntityOne+"."
     elif queryType == "3":
@@ -542,48 +558,56 @@ def get_welcome_response():
     """ If we wanted to initialize the session to have some attributes we could
     add those here
     """
-
+    global dialogueManager
     session_attributes = {}
     card_title = "Welcome"
-    speech_output = "Hello"
-    '''
-                    " You can ask the following questions," \
-                    " Who is X?" \
-                    " Or What is the relationship between X and Y? "\
-                    " In here the X and Y can be any name of existing characters."\
-                    " Who is the X of Y? where X is any relation and Y is any character."\
-                    " If you need any help later just say help."
-    '''
+    speech_output = "Hello, Welcome to Game of Thrones Trivia. "\
+                    "just say help to continue or whenever you need help."
+
     # If the user either does not reply to the welcome message or says something
     # that is not understood, they will be prompted again with this text.
-    reprompt_text = " You can ask the following questions," \
-                    " Who is X?" \
-                    " Or What is the relationship between person X and Y?"\
-                    " In here the X and Y can be any name of existing characters."\
-                    " Who is the X of Y? where X is any relation and Y is any character."\
-                    " If you need any help later just say help."
+    reprompt_text = "What would you like to know?"
+    dialogueManager.previousUtterence = speech_output                
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
+
 def get_help():
+    global dialogueManager
     session_attributes = {}
     card_title = "Help"
-    speech_output = " You can ask the following questions if you are confused about the stories or relationships between characters" \
-                    " By asking Who is X? You will know the background stories of that person." \
-                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related." \
-                    " Who is the X of Y? where X is any relation and Y is any character."
-                   # " 3. Who is the X of Y? where X is any relation and Y is any character."
-    # If the user either does not reply to the welcome message or says something
-    # that is not understood, they will be prompted again with this text.
-    reprompt_text = " You can ask the following questions if you are confused about the stories or relationships between characters" \
-                    " By asking Who is X? You will know the background stories of that person." \
-                    " By asking What is the relationship between person X and Y? You will get the idea of how these two characters are related"
+    dialogueManager.queryType = "100"
+    speech_output = " Say list, to know about the questions that I can answer." \
+                    " Say stop, to end the session." \
+                    " Say repeat, to repeat the previous utterance." \
+                    
+    reprompt_text = "What would you like to know?"
    
                     #" 3. Who is the X of Y? where X is any relation and Y is any character."
+    dialogueManager.previousUtterence = speech_output
     should_end_session = False
     return build_response(session_attributes, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
+
+
+
+def get_ListOfQuestions():
+    global dialogueManager
+    should_end_session = False
+    card_title = "List of questions"
+    dialogueManager.queryType="100"
+    speech_output = "You can ask the following questions. " \
+                    "1. Ask about any character. For example, who is Arya Stark. " \
+                    "2. Ask about characters relative. Like, who are the parents of Arya Stark. " \
+                    "3. Relation between any two characters. For example, how are Arya and Jon related. " \
+                    "4. Who has portrayed a given character."
+                    
+    reprompt_text = "You can ask any of the previously listed questions."
+    dialogueManager.previousUtterence=speech_output
+    return build_response({}, build_speechlet_response(
+        card_title, speech_output, reprompt_text, should_end_session))
+
 
 def handle_session_end_request():
     card_title = "Session Ended"
@@ -817,7 +841,6 @@ def get_StartOver_response():
     return build_response({}, build_speechlet_response(
         card_title, speech_output, reprompt_text, should_end_session))
 
-
 def get_PortrayedBy(intent, session):
     dialogueManager.queryType="100"
     should_end_session = False #Should be False if we want to continue dialog
@@ -885,6 +908,8 @@ def on_intent(intent_request, session):
         return get_RepeatResponse()
     elif intent_name == "AMAZON.YesIntent":
         return get_YesIntent_response()
+    elif intent_name == "ListQuestions":
+        return get_ListOfQuestions()
     elif intent_name == "AMAZON.NoIntent":
         return get_NoIntent_response()
     elif intent_name == "AMAZON.StartOverIntent":

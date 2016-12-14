@@ -60,3 +60,12 @@ PortrayedBy Who {PortrayWord} {Character}
 
 PortrayedBy  {Character} was {PortrayWord} by whom
 
+ListQuestions list the questions
+
+ListQuestions Please list the questions
+
+ListQuestions list questions
+
+ListQuestions list
+
+

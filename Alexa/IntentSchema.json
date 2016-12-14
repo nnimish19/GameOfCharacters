@@ -81,6 +81,9 @@
           "intent": "AMAZON.StartOverIntent"
         },
         {
+          "intent": "ListQuestions"
+        },
+        {
           "intent": "PortrayedBy",
           "slots": [
             {
