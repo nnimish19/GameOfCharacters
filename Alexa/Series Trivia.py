@@ -27,7 +27,7 @@ EntityList = []
 
 prob=float(1)
 
-GenderNeutralRelations=["parent", "sibling", "spouse", "cousin", "grandparent"]
+GenderNeutralRelations=["parent", "sibling", "spouse", "cousin", "grandparent", "children"]
 
 class DialogueManager:
     queryType="100"
@@ -194,6 +194,8 @@ def PrepareGraph():
         else:
             print("Error at Line:"+line)
 
+    EntityList.append("ned stark")
+    FirstNames["ned"]="ned stark"
 
 #traverse the relation graph using only these edges
 relationToVisit = ["father", "mother", "spouse", "children"]
@@ -450,6 +452,10 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
 
     entityOne = OrigEntityOne.lower()
     entityTwo = OrigEntityTwo.lower()
+    if "ned stark" in entityOne:
+        entityOne = "eddard stark"
+    if "ned stark" in entityTwo:
+        entityTwo = "eddard stark"
     if entityOne not in EntityList:
         #entityOne = correction(entityOne)
         print("Error: Entity not found in Database")
@@ -499,11 +505,15 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
             
             if len(result) == 1:
                 plural=" is the "
-                if OrigEntityTwo[-1] == 's':
+                if "child" in OrigEntityTwo:
+                    OrigEntityTwo="child"
+                elif OrigEntityTwo[-1] == 's':
                     OrigEntityTwo = OrigEntityTwo[0:-1]
             else:
                 plural=" are the "
-                if OrigEntityOne[-1] != 's':
+                if "child" in OrigEntityTwo:
+                    OrigEntityTwo="children"
+                elif OrigEntityTwo[-1] != 's':
                     OrigEntityTwo = OrigEntityTwo+"s"
             
             #result = OrigEntityOne +"'s" +OrigEntityTwo+ " is "+ filterEntity(Entity[entityOne][entityTwo][0])
