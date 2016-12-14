@@ -452,7 +452,7 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
     entityTwo = OrigEntityTwo.lower()
     if entityOne not in EntityList:
         #entityOne = correction(entityOne)
-        print("Entity not found in Database")
+        print("Error: Entity not found in Database")
         return (entityOne + " is not present in Database\n")
     if queryType == '0':
         splitter=re.compile(' ')
@@ -476,7 +476,7 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
         return res
     elif queryType == "1":
         if entityTwo not in EntityList:
-            print("Entity not found in Database")
+            print("Error: Entity not found in Database")
             return (entityTwo + " is not present in Database.")
         shortRel,longRel = SearchGraph(entityOne, entityTwo)
         if shortRel == "":
@@ -486,6 +486,7 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
     elif queryType == "2":
         result = findRelative(entityOne, entityTwo)
         if len(result) == 0:
+            print("Error: Information about "+entityTwo+" of "+entityOne + " is not present in database.")
             return ("Information about "+entityTwo+" of "+entityOne + " is not present in database.")
         else:
             res=""
@@ -509,6 +510,7 @@ def Query(queryType, OrigEntityOne, OrigEntityTwo):
             return res + plural + OrigEntityTwo + " of " + OrigEntityOne+"."
     elif queryType == "3":
         if "portrayed by" not in Entity[entityOne]:
+            print ("Error: Information about actor who played " + OrigEntityOne + " is not present in database.")
             return ("Information about actor who played "+OrigEntityOne+" is not present in database.")
         else:
             result = ""
@@ -646,7 +648,7 @@ def get_who_is_x(intent, session):
             speech_output = Query('0',character_name, "")
             reprompt_text = "You can ask the same question for a different character or try a different question."
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure which character are you talking about. Please try again."
         reprompt_text = "You can ask the question as, Who is X? where X is any character."
 
@@ -682,7 +684,7 @@ def get_relation_of_x_and_y(intent, session):
             reprompt_text = "You can ask the same question for a different characters or try a different question."
             card_title = character_name_x + " and " + character_name_y
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure which characters are you talking about. Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
 
@@ -707,7 +709,7 @@ def get_character_relative(intent, session):
                 tmpFlag = True
                 break
         if tmpFlag == False:
-            card_title = "Incorrect input."
+            card_title = "Error: Incorrect input."
             speech_output = "You can only ask about gender neutral nouns like spouse, parents, siblings, cousins, grandparents."
             reprompt_text = "You can ask the same question or try a different question."
         elif prob < 0.8:
@@ -724,7 +726,7 @@ def get_character_relative(intent, session):
             speech_output = Query('2', character_name, relation_name)
             reprompt_text = "You can ask the same question for a different characters or try a different question."
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure what you are talking about. " \
                         "Please try again."
         reprompt_text = "You can ask the same question or try a different question."
@@ -761,7 +763,7 @@ def get_YesIntent_response():
         reprompt_text = "You can ask the same question for a different characters or try a different question."
         card_title = "Response"
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure what are you talking about. Please try again."
         reprompt_text = "You can ask the same question for a different characters or try a different question."
     dialogueManager.queryType="100"
@@ -801,7 +803,7 @@ def get_OneSlotCorrectedResponse(intent, session):
         speech_output = Query(dialogueManager.queryType, dialogueManager.entityOne, dialogueManager.entityTwo)
         reprompt_text = "You can ask the same question for a different character or try a different question."
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure which character are you talking about. " \
                         "Please try again."
         reprompt_text = "You can a different like Who is X? where X is any character."
@@ -828,7 +830,7 @@ def get_TwoSlotCorrectedResponse(intent, session):
         reprompt_text = "You can ask the same question for a different characters or try a different question."
         card_title = character_name_x + " and " + character_name_y
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure which characters are you talking about. " \
                         "Please try again."
         reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
@@ -873,7 +875,7 @@ def get_PortrayedBy(intent, session):
             speech_output = Query('3',character_name, "")
             reprompt_text = "You can ask the same question for a different character or try a different question."
     else:
-        card_title = "Incorrect input."
+        card_title = "Error: Incorrect input."
         speech_output = "I'm not sure which character are you talking about. Please try again."
         reprompt_text = "You can ask the question as, Who portrayed X? where X is any character."
 
