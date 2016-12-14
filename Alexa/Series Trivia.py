@@ -1015,6 +1015,6 @@ def lambda_handler(event, context):
         response = on_session_ended(event['request'], event['session'])
 
     stop = time.time()
-    print ("Total Time(sec): ", start-stop)
+    print ("Total Time(sec): ", stop-start)
     return response
     
