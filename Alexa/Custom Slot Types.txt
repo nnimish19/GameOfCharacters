@@ -1,16 +1,28 @@
 LIST_OF_RELATIONS
 
 spouse
-parents
-children
+parent
+child
 grandparent
-cousins
+cousin
 great grandparent
 great great grandparent
 great great great grandparent
 great great great great grandparent
 great great great great great grandparent
 great great great great great great grandparent
+spouses
+parents
+children
+grandparents
+cousins
+great grandparents
+great great grandparents
+great great great grandparents
+great great great great grandparents
+great great great great great grandparents
+great great great great great great grandparents
+
 
 LIST_OF_PORTRAYWORDS
 

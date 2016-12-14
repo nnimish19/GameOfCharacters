@@ -701,7 +701,16 @@ def get_character_relative(intent, session):
         character_name = intent['slots']['Character']['value']
         relation_name = intent['slots']['Relation']['value']
         character_name = correction(character_name.lower());
-        if prob < 0.8:
+        tmpFlag = False
+        for w in GenderNeutralRelations:
+            if w in relation_name:
+                tmpFlag = True
+                break
+        if tmpFlag == False:
+            card_title = "Incorrect input."
+            speech_output = "You can only ask about gender neutral nouns like spouse, parents, siblings, cousins, grandparents."
+            reprompt_text = "You can ask the same question or try a different question."
+        elif prob < 0.8:
             dialogueManager.queryType="2"
             dialogueManager.entityOne=character_name
             dialogueManager.entityTwo=relation_name
@@ -716,9 +725,9 @@ def get_character_relative(intent, session):
             reprompt_text = "You can ask the same question for a different characters or try a different question."
     else:
         card_title = "Incorrect input."
-        speech_output = "I'm not sure what are you talking about. " \
+        speech_output = "I'm not sure what you are talking about. " \
                         "Please try again."
-        reprompt_text = "You can ask the question as, What is the relation of X and Y? where X and Y both are different characters."
+        reprompt_text = "You can ask the same question or try a different question."
 
     
     dialogueManager.previousUtterence = speech_output
